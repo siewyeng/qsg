@@ -1,0 +1,6 @@
+;;; -*- Mode: TDL; Coding: utf-8 -*-
+singular-lr := singular-lex-rule.
+
+base-lr := base-lex-rule.
+
+inv-lr := subj-v-inv-lrule.
