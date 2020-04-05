@@ -1,0 +1,62 @@
+Week 7 
+
+The lesson went through pumping rules and how it is used for many things including adding in a preposition when it is not present in the utterance. 
+
+Added noun+det-lex-item to the grammar in singlish.tdl for the noun version of this and for everything. This type of lexical item has an empty spr list and functions like a noun with a filled SPR. This is used through the introduction of a lexical entry of this that is not the determiner but also a generic noun. As a result, constructions like the cat eats this can parse with this grammar. There is now a nice parallel between the two “this” - they both have _this_q_rel but only the noun has _thing_n_rel. 
+
+After the lesson, I added the similar entries for these, that and those. However, they have different number values, and this is not reflected by n+det-lex. The category has to be split into different types by number in order to register this distinction with SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.NUM #number. --> changed the n+det-lex to sg_n+det-lex and pl_n+det-lex. (changes made in qsg_14.2) 
+
+The auxiliary be (with the lexical entry of “is”) was created for the experiential form to combine with verbs with the “-ing” suffix. However, since the lexical entry for the verb is underspecified in terms of what FORM it has, it is still able to combine with the auxiliary. In qsg_14.2, a base form will be implemented for the lexical entries such that they cannot be considered to be a verb of prp FORM. 
+
+In an attempt to introduce the different  forms of be for the copula, I added in  
+
+is-cop-lex := be-cop-lex & 
+    [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular, 
+                                         PER 3rd ]]. 
+
+in singlish.tdl and introduced the in the lexicon an is copula that is of type is-cop-lex. However, it did not work and all constructions with the copula like he is cute no longer parse. 
+
+Week 8
+
+1. Added embedded clauses through 
+A new lexical entry of think_clause was made
+think_clause := decl_comp-verb-lex
+
+decl_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD +vjc ] > ].
+- under the COMPS, j was added to the HEAD value as copula omission is possible and a clause can be headed by j
+--> ?but c stands for adposition and not clause? then why is c used
+
+Added in a lexical entry for that_comp of type comps1_complementizer-lex-item:
+
+comps1-complementizer-lex-item := complementizer-lex-item &
+  [ SYNSEM.LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
+which means it is of HEAD comps and takes something with an empty SUBJ and COMPS with HEAD verb
+--> but the complementizer should be able to take a clause headed by an adj as well --> change HEAD to +vj so that senten
+
+Added in predicative adjectives:
+
+pred-adj-lex := adj-lex &
+    [ SYNSEM.LOCAL.CAT.HEAD.MOD < >, 
+      SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL [CAT.HEAD noun,                                                
+                                  	  CONT.HOOK.INDEX #ind ] ] >,
+      SYNSEM.LKEYS.KEYREL.ARG1 #ind ].
+
+
+
+
+
+
+
+TODO: only allow the adj_pred to combine with bare NPs
+      --> include other adj_pred entries for the other adjectives
+
+      find out why a possible parse for 'he is cute' turns it into an interrogative
+      find out why all attributive adjectives are now ADJS (SOLVED)
+
+
+
+
+
+
+

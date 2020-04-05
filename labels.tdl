@@ -199,6 +199,23 @@ adj-bottom-label := label &
                             COORD + ],
 	     LABEL-NAME "ADJ-B" ].
 
+adjs-label := label & 
+"""
+2/4/2020
+this label was added to allow utterances like "he cute" to be an ADJS instead of ADJ at the top node
+
+3/4/2020
+added in the HEAD.MOD < > so that attributive adjectives will not be an ADJS
+Prevent [cute] in "cute cat sleep" from being an ADJS
+"""
+	   [ SYNSEM.LOCAL[ CAT [ HEAD adj,
+                    		 HEAD.MOD < >,
+                                 VAL [ COMPS < >,
+				       SUBJ < > ] ],
+                           COORD-STRAT "" ],
+
+	     LABEL-NAME "ADJS" ].
+
 adj-label := label & 
 	   [ SYNSEM.LOCAL[ CAT.HEAD adj,
                            COORD-STRAT "" ],
@@ -207,6 +224,7 @@ adj-label := label &
 adj-top-label := label & 
 	   [ SYNSEM.LOCAL.CAT.HEAD adj,
 	     LABEL-NAME "ADJ-T" ].
+
 
 conj-label := label & 
 	      [ SYNSEM.LOCAL.CAT.HEAD conj,

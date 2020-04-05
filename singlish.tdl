@@ -222,6 +222,14 @@ transitive_verb-verb-lex := nom-acc-transitive-verb-lex.
 intransitive_verb-verb-lex := intransitive-verb-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.FORM form ].
 
+clausal-verb-lex := main-verb-lex &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS <  #clause >,
+    ARG-ST < [ LOCAL.CAT.HEAD noun ],
+             #clause &
+             [ LOCAL.CAT.VAL [ SPR 0-1-list,
+                               COMPS < >,
+                               SUBJ < > ] ] > ].
+
 ;;; Auxiliaries
 
 subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
@@ -283,9 +291,10 @@ adj-comp-copula-verb-lex := cop-lex &
 
 be-cop-lex := adj-comp-copula-verb-lex.
 
-is-cop-lex := be-cop-lex &
-    [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
-					 PER 3rd ] ].
+;;;is-cop-lex := be-cop-lex &
+;;;    [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
+;;;					 PER 3rd ] ].
+
 ;;; Adjectives
 
 adj-lex := basic-intersective-adjective-lex.
@@ -301,19 +310,35 @@ attr-adj-lex := adj-lex & intersective-mod-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT [ HEAD noun,
                                               VAL.SPR cons ] ] > ].
 
+pred-adj-lex := adj-lex &
+"""
+2/4/2020
+added in this lex type for sentences with the predicative adj to parse
+This has an empty MOD list such that '[the cat][cute]' cannot be a Head-mod phrase.
+"""
+    [ SYNSEM.LOCAL.CAT.HEAD.MOD < >, 
+      SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL [CAT.HEAD noun,                                                
+                                  	  CONT.HOOK.INDEX #ind ] ] >,
+      SYNSEM.LKEYS.KEYREL.ARG1 #ind ].
+
 ;;; Complementizers
 
 ; We treat question particles as complementizers.
 ; Here is the lexical type for complementizers.
 
 complementizer-lex-item := raise-sem-lex-item & basic-one-arg &
+"""
+3/4/2020
+changed the HEAD value of #comps from verb to +vj
+to allow for sentences like 'he think that he cute'
+"""
   [ SYNSEM.LOCAL.CAT [ HEAD comp &
                             [ MOD < > ],
                        VAL [ SPR < >,
                              SUBJ < >,
                              COMPS < #comp > ] ],
     ARG-ST < #comp &
-             [ LOCAL.CAT [ HEAD verb,
+             [ LOCAL.CAT [ HEAD +vj,
                            VAL [ SUBJ < >,
                                  COMPS < > ] ] ] > ].
 
@@ -323,6 +348,17 @@ qpart-lex-item := complementizer-lex-item &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.SF ques,
                    CAT.VAL.COMPS.FIRST.LOCAL.CAT [ MC +,
                                                    HEAD.FORM finite ] ] ].
+
+comps1-complementizer-lex-item := complementizer-lex-item &
+"""
+2/4/2020
+added this typs in for that_comp
+"""
+  [ SYNSEM.LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
+
+tr_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
+    [ SYNSEM.LOCAL.CAT.VAL.COMPS < [LOCAL.CAT.HEAD comp ] >
+    ].
 
 ;;; Others
 
@@ -350,9 +386,10 @@ singular-determiner-lex := determiner-lex & no-icons-lex-item &
 neg-adv-lex := basic-scopal-adverb-lex &
   [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
                              COMPS < >,
-                             SUBJ < > ],
+                             SUBJ < >, 
+			     SPEC < >],
                        POSTHEAD -,
-                       HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
+                       HEAD.MOD < [ LOCAL.CAT [ HEAD +vj,
                                                 VAL [ SUBJ cons,
                                                       COMPS null ] ] ] > ] ].
 
@@ -448,7 +485,7 @@ probem solved: when the aux is able to modify anything after undergoing the subj
 ; The head of head-comp-phrase can't be: ['comp']
 
 head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
-  [ SYNSEM.LOCAL.CAT.HEAD +nvjrpdmo ].
+  [ SYNSEM.LOCAL.CAT.HEAD head].
 
 subj-head-phrase := decl-head-subj-phrase & head-final &
   [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < >].
@@ -568,7 +605,9 @@ s2-top-coord-rule := basic-s-top-coord-rule & apoly-top-coord-rule &
 s2-bottom-coord-rule := conj-first-bottom-coord-rule & s-bottom-coord-phrase &
   [ SYNSEM.LOCAL.COORD-STRAT "2" ].
 
-noun+det-lex-item := norm-hook-lex-item &non-mod-lex-item &
+;;; Lexical Items
+
+noun+det-lex-item := norm-hook-lex-item & non-mod-lex-item &
   [ SYNSEM [LOCAL [CAT [ HEAD noun,
 			 VAL [ SPR < >,   
    			       COMPS < >,
@@ -588,3 +627,12 @@ sg_n+det-lex := noun+det-lex-item &
 
 pl_n+det-lex := noun+det-lex-item &
     [SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
+
+decl_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
+"""
+2/4/2020
+this lex type was included for think_clause as it takes a clause as its second argument
+the HEAD value of COMPS includes j as Singlish clauses can be headed by adj
+"""
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD +vjc ] > ].
+
