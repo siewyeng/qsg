@@ -323,7 +323,7 @@ This has an empty MOD list such that '[the cat][cute]' cannot be a Head-mod phra
 
 5/4/2020
 added in VAL.SPR < >, to ensure that the subj has to be an NP
-prevent to parses for sentences like "he cute"
+prevent multiple parses for sentences like "he cute"
 """
     [ SYNSEM.LOCAL.CAT.HEAD.MOD < >, 
       SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL [CAT [HEAD noun,

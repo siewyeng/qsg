@@ -18,7 +18,7 @@ in singlish.tdl and introduced the in the lexicon an is copula that is of type i
 
 Week 8
 
-1. Added embedded clauses through 
+1. Added embedded clauses through the introduction of clausal verbs.
 A new lexical entry of think_clause was made
 think_clause := decl_comp-verb-lex
 
@@ -27,10 +27,11 @@ decl_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
 - under the COMPS, j was added to the HEAD value as copula omission is possible and a clause can be headed by j
 --> ?but c stands for adposition and not clause? then why is c used
 
-Added in a lexical entry for that_comp of type comps1_complementizer-lex-item:
+In order to parse sentences with "that" as a complementizer, a lexical entry for that_comp of type comps1_complementizer-lex-item was added in:
 
 comps1-complementizer-lex-item := complementizer-lex-item &
   [ SYNSEM.LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
+
 which means it is of HEAD comps and takes something with an empty SUBJ and COMPS with HEAD verb
 --> but the complementizer should be able to take a clause headed by an adj as well --> change HEAD to +vj so that senten
 
@@ -43,6 +44,8 @@ pred-adj-lex := adj-lex &
       SYNSEM.LKEYS.KEYREL.ARG1 #ind ].
 
 added a pred type to lexicon for all adjectives
+
+For the omission of the aux eg. "He is sleeping" to "He sleeping" should I do a null aux that has the same supertype but an empty stem? (sounds like it could cause a lot of problems) 
 
 
 

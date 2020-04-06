@@ -100,7 +100,7 @@ eat := transitive_verb-verb-lex &
 
 think_clause := decl_comp-verb-lex &
   [ STEM < "think" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_think_v_3_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_think_v_2_rel" ].
 
 sleep := nom-intransitive-verb-lex &
 """
@@ -131,12 +131,34 @@ can := can-aux-lex &
     SYNSEM.LKEYS.KEYREL.PRED "_can_v_rel" ].
 
 is_aux := subj-raise-aux-no-pred &
-  [ STEM < "is" >].
+  [ STEM < "is" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
+                                                                PER 3rd ] ].
+
+are_aux := subj-raise-aux-no-pred &
+  [ STEM < "are" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
+
+am_aux := subj-raise-aux-no-pred &
+  [ STEM < "am" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
+                                                                PER 1st ] ].
 
 ;;; Copulas
 
-is := be-cop-lex &
-  [ STEM < "is" > ].
+is_cop := be-cop-lex &
+  [ STEM < "is" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
+                                                                PER 3rd ] ].
+
+are_cop := be-cop-lex &
+  [ STEM < "are" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
+
+am_cop := be-cop-lex &
+  [ STEM < "am" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
+                                                                PER 1st ] ].
 
 ;;; Determiners
 
