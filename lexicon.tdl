@@ -57,11 +57,19 @@ him := 3sg_acc-noun-lex &
 
 ;;; Adjectives
 
-big := adj1-adj-lex &
+big_attr := adj1-adj-lex &
   [ STEM < "big" >,
     SYNSEM.LKEYS.KEYREL.PRED "_big_a_rel" ].
 
-happy := adj1-adj-lex &
+big_pred := pred-adj-lex &
+  [ STEM < "big" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_big_a_rel" ].
+
+happy_attr := adj1-adj-lex &
+  [ STEM < "happy" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_happy_a_rel" ].
+
+happy_pred := pred-adj-lex &
   [ STEM < "happy" >,
     SYNSEM.LKEYS.KEYREL.PRED "_happy_a_rel" ].
 
@@ -94,15 +102,21 @@ think_clause := decl_comp-verb-lex &
   [ STEM < "think" >,
     SYNSEM.LKEYS.KEYREL.PRED "_think_v_3_rel" ].
 
-sleep := intransitive_verb-verb-lex &
+sleep := nom-intransitive-verb-lex &
+"""
+6/4/2020
+changed supertype from intransitive_verb-verb-lex to nom-intransitive-verb-lex
+so that constructions like 'me sleep' is not allowed
+same for 'think_intr' and 'sing'
+"""
   [ STEM < "sleep" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sleep_v_rel" ].
 
-sing := intransitive_verb-verb-lex &
+sing := nom-intransitive-verb-lex &
   [ STEM < "sing" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sing_v_rel" ].
 
-think_intr := intransitive_verb-verb-lex &
+think_intr := nom-intransitive-verb-lex &
   [ STEM < "think" >,
     SYNSEM.LKEYS.KEYREL.PRED "_think_v_1_rel" ].
 

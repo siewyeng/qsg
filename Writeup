@@ -42,17 +42,24 @@ pred-adj-lex := adj-lex &
                                   	  CONT.HOOK.INDEX #ind ] ] >,
       SYNSEM.LKEYS.KEYREL.ARG1 #ind ].
 
+added a pred type to lexicon for all adjectives
 
 
 
 
 
 
-TODO: only allow the adj_pred to combine with bare NPs
+
+TODO: allow the adj_pred to only combine with bare NPs --> eg. "he cute" (SOLVED)
       --> include other adj_pred entries for the other adjectives
 
       find out why a possible parse for 'he is cute' turns it into an interrogative
-      find out why all attributive adjectives are now ADJS (SOLVED)
+      find out why all attributive adjectives are now ADJS (SOLVED - refer to adjs-label in labels.tdl)
+      
+      Stop constructions like "me sleep" (SOLVED - refer to lexicon)
+      Similarly, stop constructions like "me think he sleeping" --> made a change to decl_comp-verb-lex but did not solve problem
+
+      Need to stop attr_adj from modifying pronouns (SOLVED) --> by adding in LOCAL.CAT.HEAD.PRON - under the MOD value of attr-adj-lex
 
 
 

@@ -307,7 +307,12 @@ adj1-adj-lex := attr-adj-lex &
 ; Basic attributive adjective definition
 
 attr-adj-lex := adj-lex & intersective-mod-lex &
+"""
+6/4/2020
+added PRON - to prevent constructions like 'big he sleep'
+"""
   [ SYNSEM.LOCAL.CAT.HEAD.MOD < [ LOCAL.CAT [ HEAD noun,
+					      HEAD.PRON -,
                                               VAL.SPR cons ] ] > ].
 
 pred-adj-lex := adj-lex &
@@ -315,9 +320,14 @@ pred-adj-lex := adj-lex &
 2/4/2020
 added in this lex type for sentences with the predicative adj to parse
 This has an empty MOD list such that '[the cat][cute]' cannot be a Head-mod phrase.
+
+5/4/2020
+added in VAL.SPR < >, to ensure that the subj has to be an NP
+prevent to parses for sentences like "he cute"
 """
     [ SYNSEM.LOCAL.CAT.HEAD.MOD < >, 
-      SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL [CAT.HEAD noun,                                                
+      SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL [CAT [HEAD noun,
+                                               VAL.SPR < > ], 
                                   	  CONT.HOOK.INDEX #ind ] ] >,
       SYNSEM.LKEYS.KEYREL.ARG1 #ind ].
 
@@ -633,6 +643,12 @@ decl_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
 2/4/2020
 this lex type was included for think_clause as it takes a clause as its second argument
 the HEAD value of COMPS includes j as Singlish clauses can be headed by adj
+
+6/4/2020
+added in the restriction of the case of the SUBJ to make sure it is nom
+prevent constructions like 'me think he sleeps'
+but it's not working
 """
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD +vjc ] > ].
+  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD +vjc ] > ],
+                           SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ].
 
