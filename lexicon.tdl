@@ -5,6 +5,10 @@ cat := common_noun-noun-lex &
   [ STEM < "cat" >,
     SYNSEM.LKEYS.KEYREL.PRED "_cat_n_1_rel" ].
 
+glass := common_noun-noun-lex &
+  [ STEM < "glass" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_glass_n_1_rel" ].
+
 thing := common_noun-noun-lex &
   [ STEM < "thing" >,
     SYNSEM.LKEYS.KEYREL.PRED "_thing_n_1_rel" ].
@@ -98,6 +102,10 @@ eat := transitive_verb-verb-lex &
   [ STEM < "eat" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
+hurt := transitive_verb-verb-lex &
+  [ STEM < "hurt" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_hurt_v_rel" ].
+
 think_clause := decl_comp-verb-lex &
   [ STEM < "think" >,
     SYNSEM.LKEYS.KEYREL.PRED "_think_v_2_rel" ].
@@ -130,6 +138,10 @@ will := probability_aux-aux-lex &
   [ STEM < "will" >,
     SYNSEM.LKEYS.KEYREL.PRED "_will_v_rel" ].
 
+does := subj-raise-aux-no-pred &
+  [ STEM < "does" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
+                                                                PER 3rd ] ].
 can := can-aux-lex &
   [ STEM < "can" >,
     SYNSEM.LKEYS.KEYREL.PRED "_can_v_rel" ].
@@ -138,7 +150,6 @@ is_aux := subj-raise-aux-no-pred &
   [ STEM < "is" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ].
-
 are_aux := subj-raise-aux-no-pred &
   [ STEM < "are" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
@@ -221,6 +232,10 @@ is%20it := qpart-lex-item &
 
 never := neg-adv-lex &
   [ STEM < "never" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+
+not := not_neg-adv-lex &
+  [ STEM < "not" >,
     SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
 and1 := conj-lex &

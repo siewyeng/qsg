@@ -416,6 +416,17 @@ neg-adv-lex := basic-scopal-adverb-lex &
                                                 VAL [ SUBJ cons,
                                                       COMPS null ] ] ] > ] ].
 
+not_neg-adv-lex := basic-scopal-adverb-lex &
+  [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
+                             COMPS < >,
+                             SUBJ < >, 
+			     SPEC < >],
+                       POSTHEAD -,
+                       HEAD.MOD < [ LOCAL.CAT [ HEAD +vj &
+						     [AUX - ],
+                                                VAL [ SUBJ cons,
+                                                      COMPS null ] ] ] > ] ].
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules
 ;;;;;;;;;;;;;;;;;;;

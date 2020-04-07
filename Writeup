@@ -64,6 +64,10 @@ TODO: allow the adj_pred to only combine with bare NPs --> eg. "he cute" (SOLVED
 
       Need to stop attr_adj from modifying pronouns (SOLVED) --> by adding in LOCAL.CAT.HEAD.PRON - under the MOD value of attr-adj-lex
 
+      Add in ask and whether in lex and have them with the right SF (SOLVED)
+
+      Reduce the number of trees by allowing verbs to only take nouns with empty SPR (SOLVED
+
 
 
 
