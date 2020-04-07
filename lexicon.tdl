@@ -102,6 +102,10 @@ think_clause := decl_comp-verb-lex &
   [ STEM < "think" >,
     SYNSEM.LKEYS.KEYREL.PRED "_think_v_2_rel" ].
 
+ask_clause := int_comp-verb-lex &
+  [ STEM < "ask" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ask_v_rel" ].
+
 sleep := nom-intransitive-verb-lex &
 """
 6/4/2020
@@ -229,5 +233,8 @@ and2 := conj-lex &
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "2" ].
 
-that_comp := comps1-complementizer-lex-item &
-    [STEM <"that">].
+that_comp := decl_comps-complementizer-lex-item &
+  [ STEM <"that"> ].
+
+if_comp := int_comps-complementizer-lex-item &
+  [ STEM < "if" > ]. 

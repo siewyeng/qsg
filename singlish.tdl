@@ -359,12 +359,25 @@ qpart-lex-item := complementizer-lex-item &
                    CAT.VAL.COMPS.FIRST.LOCAL.CAT [ MC +,
                                                    HEAD.FORM finite ] ] ].
 
-comps1-complementizer-lex-item := complementizer-lex-item &
+decl_comps-complementizer-lex-item := complementizer-lex-item &
 """
 2/4/2020
-added this typs in for that_comp
+added this type in for that_comp
+
+7/4/2020
+added in SF prop to prevent constructions with "ask that"
 """
-  [ SYNSEM.LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.SF prop,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
+
+int_comps-complementizer-lex-item := complementizer-lex-item &
+"""
+7/4/2020
+added this type in for ask_comp
+to add in the SF question
+"""
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.SF ques,
+                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
 
 tr_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
     [ SYNSEM.LOCAL.CAT.VAL.COMPS < [LOCAL.CAT.HEAD comp ] >
@@ -648,7 +661,16 @@ the HEAD value of COMPS includes j as Singlish clauses can be headed by adj
 added in the restriction of the case of the SUBJ to make sure it is nom
 prevent constructions like 'me think he sleeps'
 but it's not working
+
+7/4/2020
+added in SF prop to prevent constructions with "think if ..."
 """
-  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD +vjc ] > ],
-                           SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ].
+  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL [ CAT.HEAD +vjc,
+				     	     CONT.HOOK.INDEX.SF prop ] ] >,
+                           SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].
+
+int_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
+  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL [ CAT.HEAD +vjc,
+					     CONT.HOOK.INDEX.SF ques ] ] >,
+                           SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].
 
