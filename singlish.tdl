@@ -26,7 +26,8 @@ head :+ [ PRON bool,
 noun :+ [ CASE case ].
 
 png :+ [ PER person,
-    NUM number ].
+    NUM number,
+    COUNT bool ].
 
 basic-head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.MC #mc,
     HEAD-DTR.SYNSEM.LOCAL.CAT.MC #mc ].
@@ -118,7 +119,17 @@ acc_pronoun-noun-lex := pronoun-noun-lex & no-spr-noun-lex &
                             CASE acc ] ].
 
 common_noun-noun-lex := noun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 3rd ].
+"""
+7/4/2020
+added in the COUNT + value in contrast with the newly added mass_noun-noun-lex
+"""
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+				       COUNT + ] ].
+
+mass_noun-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+				       NUM singular,
+				       COUNT - ] ].
 
 1sg_nom-noun-lex := nom_pronoun-noun-lex &
   [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
@@ -258,11 +269,35 @@ subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
 subj-raise-aux-with-pred := subj-raise-aux & norm-sem-lex-item & trans-first-arg-raising-lex-item-1.
 
 subj-raise-aux-no-pred := subj-raise-aux & trans-first-arg-raising-lex-item-2 &
+"""
+2/4/2020
+added in FORM prp for the copula -ing construction
+"""
 			  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM prp].
 
-
-probability_aux-aux-lex := subj-raise-aux-with-pred &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base ].
+;subj-control-aux := aux-lex & trans-first-arg-control-lex-item &
+;  [ SYNSEM.LOCAL [ CAT.VAL [ SPR < >,
+;                             SPEC < >,
+;                             COMPS < #comps >,
+;                             SUBJ < #subj > ],
+;                   CONT.HOOK.XARG #xarg ],
+;    ARG-ST < #subj &
+;             [ LOCAL [ CAT [ HEAD noun &
+;                                  [ CASE #case ],
+;                             VAL [ SUBJ < >,
+;                                   SPR < >,
+;                                   SPEC < >,
+;                                   COMPS < > ] ],
+;                       CONT.HOOK.INDEX #xarg ] ],
+;             #comps &
+;             [ LOCAL.CAT [ HEAD verb &
+;                                [ AUX - ],
+;                           VAL [ COMPS < >,
+;                                 SPR < >,
+;                                 SPEC < >,
+;                                 SUBJ < #subj &
+;                                        [ LOCAL.CAT.HEAD.CASE #case ] > ] ] ] > ].
+;unable to get the link between SUBJ and COMPS in the mrs
 
 can-aux-lex := subj-raise-aux-with-pred &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base ].
@@ -396,7 +431,12 @@ determiner-lex := basic-determiner-lex & norm-zero-arg & non-mod-lex-item &
 definite-determiner-lex := determiner-lex & no-icons-lex-item.
 
 plural-determiner-lex := determiner-lex & no-icons-lex-item &
-  [ SYNSEM.LOCAL.CAT.VAL.SPEC.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
+"""
+7/4/2020
+added in the COUNT + feature
+"""
+  [ SYNSEM.LOCAL.CAT.VAL.SPEC.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM plural,
+								COUNT + ] ].
 
 singular-determiner-lex := determiner-lex & no-icons-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL.SPEC.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM singular ].
@@ -461,7 +501,7 @@ added in 'HEAD.FORM finite' to the 3sg-lex-rule so that when it is non finite (e
                                                                 PER 3rd ] ]].
 
 question-lex-rule := add-only-no-ccont-rule &
-  [ DTR probability_aux-aux-lex,
+  [ DTR can-aux-lex,
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques ].
 
 nonfin-lex-rule-super := add-only-no-ccont-rule &

@@ -6,7 +6,7 @@ Added noun+det-lex-item to the grammar in singlish.tdl for the noun version of t
 
 After the lesson, I added the similar entries for these, that and those. However, they have different number values, and this is not reflected by n+det-lex. The category has to be split into different types by number in order to register this distinction with SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.NUM #number. --> changed the n+det-lex to sg_n+det-lex and pl_n+det-lex. (changes made in qsg_14.2) 
 
-The auxiliary be (with the lexical entry of “is”) was created for the experiential form to combine with verbs with the “-ing” suffix. However, since the lexical entry for the verb is underspecified in terms of what FORM it has, it is still able to combine with the auxiliary. In qsg_14.2, a base form will be implemented for the lexical entries such that they cannot be considered to be a verb of prp FORM. 
+The auxiliary be (with the lexical entry of “is”) was created for the experiential form to combine with verbs with the “-ing” suffix. However, since the lexical entry for the verb is underspecified in terms of what FORM it has, it is still able to combine with the auxiliary. In qsg_14.2, a base form was implemented for the lexical entries such that they cannot be considered to be a verb of prp FORM. However, this does not work as the verb is still able to unify with the aux before it undergoes any infllection. [addition from week 9]: A new rule has to be created to make sure every verb has to undergo an inflection before it is able to pass through the basic-binary-phrase.
 
 In an attempt to introduce the different  forms of be for the copula, I added in  
 
@@ -24,15 +24,17 @@ think_clause := decl_comp-verb-lex
 
 decl_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD +vjc ] > ].
-- under the COMPS, j was added to the HEAD value as copula omission is possible and a clause can be headed by j
---> ?but c stands for adposition and not clause? then why is c used
+
+This allows for sentences like "I think that (clause)". Due to how Singlish allows sentences to be headed by adjectives eg "he cute", j was added into the HEAD of the complement of decl_comp-verb-lex.
+
+Question: but c stands for adposition and not clause? then why is c used
 
 In order to parse sentences with "that" as a complementizer, a lexical entry for that_comp of type comps1_complementizer-lex-item was added in:
 
 comps1-complementizer-lex-item := complementizer-lex-item &
   [ SYNSEM.LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
 
-which means it is of HEAD comps and takes something with an empty SUBJ and COMPS with HEAD verb
+which means it is of HEAD comps and takes something with an empty SUBJ and COMPS list with HEAD verb
 --> but the complementizer should be able to take a clause headed by an adj as well --> change HEAD to +vj so that senten
 
 Added in predicative adjectives:
@@ -66,10 +68,47 @@ TODO: allow the adj_pred to only combine with bare NPs --> eg. "he cute" (SOLVED
 
       Add in ask and whether in lex and have them with the right SF (SOLVED)
 
-      Reduce the number of trees by allowing verbs to only take nouns with empty SPR (SOLVED
+      Reduce the number of trees by allowing verbs to only take nouns with empty SPR (SOLVED)
+
+Week 9
+
+"continue" takes grammatical subject but no semantic subject VS "decide" that takes both grammatical and semantic subject
+RAISING = when you pass everything up 
+ditrans-first-arg-raising-lex-item eg. "
+trans-first-arg-raising ... eg. "Kim seems to sleep."
+---> make "glass" into a non count noun
+Added in COUNT bool as a feature
+and introduced mass_noun-noun-lex in contrast with the common_noun-noun-lex. Also changed the COUNT feature in SPEC of plural-determiner-lex to COUNT +
+--> fix neg and aux
+
+--> changes made: added in the glass and not and does
+--> need to change raising to control verb...
+--> how to limit "keyi" such that it cannot take anything with an aspect marker
+
+The sentences "I can eat glass. It does not hurt me." were parsed after adding in the relevant lexical entries. Since all existing common nouns were countable, the addition of "glass" had to fit into a new category and mass_noun-noun-lex was introduced along with a new COUNT bool feature.
+
+mass_noun-noun-lex := noun-lex &
+  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
+				       NUM singular,
+				       COUNT - ] ].
+
+It is similar to the lexical entry for common nouns but with COUNT - and NUM singular. In order to prevent the unification of mass nouns with certain determiners, the COUNT value of the SPEC in the plural-determiner-lex is set to +, preventing noun phrases like "these glass".
+
+"does" was originally inserted in as an subj-raise-aux-no-pred. But it is actualls subject controlling and not raising. A new type for the subj-control-aux was created in singlish.tdl but it was unable to link the subj of "does" to its comp and this change has since been commented out.
+The current version of the grammar uses subj-raise-aux-no-pred. While the tree looks correct, a problem exists in the mrs when "does not" is present and the complement of "does" is unable to index the subject as its ARG1. However, the problem does not occur in sentence like "it not hurt me" or "It does hurt me".
 
 
-
+delphin process is the command?
+go to pydelphin's documentation online
+-g gives the path to the compile grammar (same as ace)
+delphin process -g [grammer] 
+it's recommended that you have a source profile (where they write the generation results) that is different
+-e for the generation mode
+1st arg is the source, second arg is the destination?
+from the one where the parsed one is
+delphin process -h to see the choices
+usually, parse-id is the same as i-id
+then do delphin select "parse-id surface"
 
 
 

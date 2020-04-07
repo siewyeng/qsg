@@ -5,7 +5,7 @@ cat := common_noun-noun-lex &
   [ STEM < "cat" >,
     SYNSEM.LKEYS.KEYREL.PRED "_cat_n_1_rel" ].
 
-glass := common_noun-noun-lex &
+glass := mass_noun-noun-lex &
   [ STEM < "glass" >,
     SYNSEM.LKEYS.KEYREL.PRED "_glass_n_1_rel" ].
 
@@ -134,7 +134,7 @@ think_intr := nom-intransitive-verb-lex &
 
 ;;; Auxiliaries
 
-will := probability_aux-aux-lex &
+will := can-aux-lex &
   [ STEM < "will" >,
     SYNSEM.LKEYS.KEYREL.PRED "_will_v_rel" ].
 
