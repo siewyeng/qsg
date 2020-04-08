@@ -25,7 +25,7 @@ think_clause := decl_comp-verb-lex
 decl_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < [ LOCAL.CAT.HEAD +vjc ] > ].
 
-This allows for sentences like "I think that (clause)". Due to how Singlish allows sentences to be headed by adjectives eg "he cute", j was added into the HEAD of the complement of decl_comp-verb-lex.
+This lexical type inherits from the clausal verb lex and clausal-second-arg-trans-lex-item as "think" would take a noun as its subject and a clause (with empty COMPS and SUBJ lists) as its second argument. This allows for sentences like "I think (clause)". Due to how Singlish allows sentences to be headed by adjectives eg "he cute" and not just verbs like in standard English varieties, j was added into the HEAD of the complement of decl_comp-verb-lex.
 
 Question: but c stands for adposition and not clause? then why is c used
 
@@ -34,10 +34,9 @@ In order to parse sentences with "that" as a complementizer, a lexical entry for
 comps1-complementizer-lex-item := complementizer-lex-item &
   [ SYNSEM.LOCAL.CAT [ VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
 
-which means it is of HEAD comps and takes something with an empty SUBJ and COMPS list with HEAD verb
---> but the complementizer should be able to take a clause headed by an adj as well --> change HEAD to +vj so that senten
+This lexical item inherits from complementizer-lex-item which inherits from raise-sem-lex-item. Raise-sem-lex-item allows the complementizer to take the things from the VAL of its complement and pass them up while complementizer-lex-item has certain features that indicates that the complement wants a clause as its complement which as mentioned earlier, can be headed by a verb or adjective in Singlish.
 
-Added in predicative adjectives:
+Lexical entries were also made for predicative adjectives such that each adjective had an attributive and a predicative entry. The predicative entries were made to inherit from pred-adj-lex.
 
 pred-adj-lex := adj-lex &
     [ SYNSEM.LOCAL.CAT.HEAD.MOD < >, 
@@ -45,7 +44,20 @@ pred-adj-lex := adj-lex &
                                   	  CONT.HOOK.INDEX #ind ] ] >,
       SYNSEM.LKEYS.KEYREL.ARG1 #ind ].
 
-added a pred type to lexicon for all adjectives
+To complement this, and the adjective headed clauses in Singlish, a new label "ADJS" was created.
+
+adjs-label := label & 
+	   [ SYNSEM.LOCAL[ CAT [ HEAD adj,
+                    		 HEAD.MOD < >,
+                                 VAL [ COMPS < >,
+				       SUBJ < > ] ],
+                           COORD-STRAT "" ],
+
+	     LABEL-NAME "ADJS" ].
+
+The ADJS labels would be used in the top nodes of clauses headed by adjectives. After the label was created, attributive adjectives were initially also labelled as ADJS since they also had empty COMPS and SUBJ lists. The empty HEAD.MOD feature was created to prevent that.
+ 
+question: In subj-head-phrase, the daughter still has to be of HEAD verb --> why can the sentence "the cat cute" parse?
 
 For the omission of the aux eg. "He is sleeping" to "He sleeping" should I do a null aux that has the same supertype but an empty stem? (sounds like it could cause a lot of problems) 
 
@@ -96,6 +108,10 @@ It is similar to the lexical entry for common nouns but with COUNT - and NUM sin
 
 "does" was originally inserted in as an subj-raise-aux-no-pred. But it is actualls subject controlling and not raising. A new type for the subj-control-aux was created in singlish.tdl but it was unable to link the subj of "does" to its comp and this change has since been commented out.
 The current version of the grammar uses subj-raise-aux-no-pred. While the tree looks correct, a problem exists in the mrs when "does not" is present and the complement of "does" is unable to index the subject as its ARG1. However, the problem does not occur in sentence like "it not hurt me" or "It does hurt me".
+
+"not" was added in to negate "hurt". Although both "not" and the existing "never" both serve to negate the predicate, they function in different environments: "never" is POSTHEAD - and only used for verbs that are not auxiliaries, while "not" negates the auxiliary and is POSTHEAD +. Thus, two distinct types were created from the neg-adv-lex to fit the two adverbs. Both types are scopal adv but have different features in the HEAD.MOD.
+
+Since "it does not hurt me" and "it hurt me" are okay, but "it not hurt me" is not, 
 
 
 delphin process is the command?

@@ -230,7 +230,7 @@ is%20it := qpart-lex-item &
   [ STEM < "is",
            "it" > ].
 
-never := neg-adv-lex &
+never := never_neg-adv-lex &
   [ STEM < "never" >,
     SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
