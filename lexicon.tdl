@@ -238,6 +238,10 @@ not := not_neg-adv-lex &
   [ STEM < "not" >,
     SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
 
+already := aspect-adv-lex &
+  [ STEM < "already" >,
+    SYNSEM.LKEYS.KEYREL.PRED "already_rel" ].
+
 and1 := conj-lex &
   [ STEM < "and" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
