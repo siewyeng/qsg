@@ -138,7 +138,7 @@ will := can-aux-lex &
   [ STEM < "will" >,
     SYNSEM.LKEYS.KEYREL.PRED "_will_v_rel" ].
 
-does := subj-raise-aux-no-pred &
+does := does_subj-raise-aux-no-pred &
   [ STEM < "does" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ].
@@ -146,15 +146,15 @@ can := can-aux-lex &
   [ STEM < "can" >,
     SYNSEM.LKEYS.KEYREL.PRED "_can_v_rel" ].
 
-is_aux := subj-raise-aux-no-pred &
+is_aux := prp_subj-raise-aux-no-pred &
   [ STEM < "is" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ].
-are_aux := subj-raise-aux-no-pred &
+are_aux := prp_subj-raise-aux-no-pred &
   [ STEM < "are" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
 
-am_aux := subj-raise-aux-no-pred &
+am_aux := prp_subj-raise-aux-no-pred &
   [ STEM < "am" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 1st ] ].

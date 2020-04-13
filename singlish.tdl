@@ -273,7 +273,7 @@ subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
 
 subj-raise-aux-with-pred := subj-raise-aux & norm-sem-lex-item & trans-first-arg-raising-lex-item-1.
 
-subj-raise-aux-no-pred := subj-raise-aux & trans-first-arg-raising-lex-item-2 &
+prp_subj-raise-aux-no-pred := subj-raise-aux & trans-first-arg-raising-lex-item-2 &
 """
 2/4/2020
 added in FORM prp for the copula -ing construction
@@ -303,6 +303,14 @@ added in FORM prp for the copula -ing construction
 ;                                 SUBJ < #subj &
 ;                                        [ LOCAL.CAT.HEAD.CASE #case ] > ] ] ] > ].
 ;unable to get the link between SUBJ and COMPS in the mrs
+
+does_subj-raise-aux-no-pred := subj-raise-aux & trans-first-arg-raising-lex-item-2 &
+"""
+13/4/2020
+added in this type to distinguish 'does' from the 'is -ing'
+previously, both 'it does sleep' and 'it does sleeping' were parsed
+"""
+			  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base].
 
 can-aux-lex := subj-raise-aux-with-pred &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base ].
@@ -487,6 +495,11 @@ but is unable to modify adj
                                                 VAL [ SUBJ cons ] ] ] > ] ].
 
 aspect-adv-lex := basic-scopal-adverb-lex &
+
+"""
+8/4/2020
+added in this type for 'already'
+"""
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT perfect,
 		   CAT [ VAL [ SPR < >,
                              COMPS < >,

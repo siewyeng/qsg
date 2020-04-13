@@ -132,7 +132,7 @@ The testsuite was updated to reflect the new phenomena for the first time since 
 
 False negatives remain the same:
 2. that ant the cat eat.
-33. he never --> "never" cannot act as a predicate
+33. he never --> "never" cannot act as a predicate. Sentence cannot be headed by "never"
 42. it sleeping is it
 43. is it it sleeping
 45. it sleeping --> "-ing" is still unable to stand without the auxiliary "is"
@@ -142,8 +142,28 @@ Due to new additions, and improvements to the grammar, previous false positives 
 17. that cats sleep. --> this uses that_comp, and what is formed is not a sentence. How to stop this from parsing???
 70. the cat think he cute that. --> have to make it such that and clause with "that" go through head-comp and not comp-head
 
-Added in "alreday" as an intersective adv, but it did not work.
+Added in "already" as an intersective adv, but it did not work.
 
+Started treebanking.
+Downloaded ace ver 0.30 along with acetools, created a link from ace to the the ace in bin (ver. 0.30), an another from fftb to the fftb inside acetools-0.9.30
+$ln -s acetools-x86-0.9.30/fftb
+$mkprof -s src/profile new/profile (inside ace-0.9.30/)
+$ln -s ace-0.9.30-x86-64/ace-0.9.30/ace
+
+Then all the ace-0.9.30 and acetools were moved into the bin in home. the assets folder from ace-0.9.31 was also copied into ace-0.9.30 for treebanking.
+
+Tentative rules in my fftb
+In the treebank, base-lex was NOT chosen in sentences like 'he sleep' because i want base-lex to be used when the verbs have to be in their base from like in 'he can sleep'. Instead, another category of lex should be created for the underspecified version which looks identical to the base-lex. That is to say base-lex cannot be further inflected while this underspecified version can still undergo eg. 3sg inflection.
+However, for nouns, the [common noun] would be assumed to be singular as this is more unmarked in Singlish (imo).
+For the tree, all coordination starts from the left.
+
+Changes in the grammar:
+previously, both 'does' and 'is_aux' from the lexicon were of the same type subj-raise-aux-no-pred however, they take complements of different forms. It was not detected as constructions like 'it does hurt me' were allowed as 'hurt' is of FORM form and was accepted as a prp complement. However, this gives false positives like (1)'it does hurting me' and (2)'he is sleep'. This distinction and the creation of 
+
+does_subj-raise-aux-no-pred := subj-raise-aux & trans-first-arg-raising-lex-item-2 &
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base ].
+
+prevents (1). (2) has to be prevented through an adjustment in the matrix for the types that are allowed to unify; through preventing the uninflected lexical entry from going through the rules.
 
 
 
