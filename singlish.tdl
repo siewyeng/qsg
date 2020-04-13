@@ -499,6 +499,9 @@ aspect-adv-lex := basic-scopal-adverb-lex &
 """
 8/4/2020
 added in this type for 'already'
+
+13/4/2020
+specified the FORM of the modified to be base but the sentence cannot parse after that. To come back to this after sorting out the FORM values
 """
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT perfect,
 		   CAT [ VAL [ SPR < >,
@@ -507,7 +510,9 @@ added in this type for 'already'
 			     SPEC < >],
                        POSTHEAD +,
                        HEAD.MOD < [ LOCAL.CAT [ HEAD verb &
-						     [AUX - ],
+						     [
+;FORM base,
+						      AUX - ],
                                                 VAL [ SUBJ cons ] ] ] > ] ] ].
 
 ;;;;;;;;;;;;;;;;;;;

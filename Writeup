@@ -142,7 +142,7 @@ Due to new additions, and improvements to the grammar, previous false positives 
 17. that cats sleep. --> this uses that_comp, and what is formed is not a sentence. How to stop this from parsing???
 70. the cat think he cute that. --> have to make it such that and clause with "that" go through head-comp and not comp-head
 
-Added in "already" as an intersective adv, but it did not work.
+Added in "already" as a scopal adv that functions similar to the neg-adv-lex.
 
 Started treebanking.
 Downloaded ace ver 0.30 along with acetools, created a link from ace to the the ace in bin (ver. 0.30), an another from fftb to the fftb inside acetools-0.9.30
