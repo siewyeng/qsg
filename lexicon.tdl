@@ -110,9 +110,13 @@ think_clause := decl_comp-verb-lex &
   [ STEM < "think" >,
     SYNSEM.LKEYS.KEYREL.PRED "_think_v_2_rel" ].
 
-ask_clause := int_comp-verb-lex &
+ask_tr-clause := int_tr-comp-verb-lex &
   [ STEM < "ask" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ask_v_rel" ].
+
+;ask_ditr-clause := int_ditr-comp-verb-lex &
+;  [ STEM < "ask" >,
+;    SYNSEM.LKEYS.KEYREL.PRED "_ask_v_rel" ].
 
 sleep := nom-intransitive-verb-lex &
 """

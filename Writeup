@@ -165,5 +165,12 @@ does_subj-raise-aux-no-pred := subj-raise-aux & trans-first-arg-raising-lex-item
 
 prevents (1). (2) has to be prevented through an adjustment in the matrix for the types that are allowed to unify; through preventing the uninflected lexical entry from going through the rules.
 
+Week 10
+
+The grammar was parsing sentences like 'i think it cute that' with "that" as a that_comp going through a comp-head rule with the clause. In order to prevent such constructions, the feature of HEAD.INIT was added into singlish.tdl with head-comp-phrase having the head daughter with HEAD.INIT + and comp-head-phrase having a head daughter with HEAD.INIT -. To prevent the earlier example, INIT + was added into the features of complementizer-lex-item which decl_comps-complementizer-lex-item (the type for that_comp) inherits from. However, since the question particle "is it" also inherits from complementizer-lex-item, this created an issue as the question particle can be used both at the start or at the end of the sentence. Thus, the HEAD.INIT + feature was moved to the subtypes of decl_comps-complementizer-lex-item and int_comps-complementizer-lex-item.
+
+In addition, there has been problems with sentences like 'it is cute' being able to be parsed as an int-cl in the node after it has passed through the subj-head phrase. This was a problem with the entry for subj-head--phrase which was copied from subj-v-inv-lrule. It has since been resolved by removing the incorrect extra information.
+
+
 
 

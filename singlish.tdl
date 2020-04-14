@@ -21,7 +21,9 @@ non-mod-lex-item := lex-item &
 head :+ [ PRON bool,
     AUX bool,
     PRD bool,
-    FORM form ].
+    FORM form,
+    INIT bool ].
+; 14/4/2020 added in INIT but it does not do anything
 
 noun :+ [ CASE case ].
 
@@ -67,10 +69,12 @@ form := *top*.
 nonfinite := form.
 finite := form.
 base := nonfinite.
-prp := nonfinite
-"""
-participle -ed, -ing
-"""
+prp := finite.
+underspec := finite.
+3sg := underspec.
+non_3sg := underspec.
+
+;participle -ed, -ing
 .
 
 ;;; Tense
@@ -246,6 +250,16 @@ the empty list did not allow for constructions like "i think he cute"
                                COMPS < >,
                                SUBJ < > ] ] > ].
 
+;ditr-clausal-verb-lex := main-verb-lex &
+;  [ SYNSEM.LOCAL.CAT.VAL.COMPS <  #objind, #clause >,
+;    ARG-ST < [ LOCAL.CAT.HEAD noun ],
+;	     #objind &
+;	     [ LOCAL.CAT.HEAD noun ],
+ ;            #clause &
+;             [ LOCAL.CAT.VAL [ SPR 0-1-list,
+;                               COMPS < >,
+;                               SUBJ < > ] ] > ].
+
 ;;; Auxiliaries
 
 subj-raise-aux := aux-lex & trans-first-arg-raising-lex-item &
@@ -306,7 +320,6 @@ added in FORM prp for the copula -ing construction
 
 does_subj-raise-aux-no-pred := subj-raise-aux & trans-first-arg-raising-lex-item-2 &
 """
-13/4/2020
 added in this type to distinguish 'does' from the 'is -ing'
 previously, both 'it does sleep' and 'it does sleeping' were parsed
 """
@@ -317,7 +330,8 @@ can-aux-lex := subj-raise-aux-with-pred &
 
 ;;; Copulas
 
-cop-lex := basic-verb-lex-super & trans-first-arg-raising-lex-item-2 & non-mod-lex-item &
+cop-lex := basic-verb-lex-super & trans-first-arg-raising-lex-item-2 & 
+ 	   non-mod-lex-item & basic-two-arg &
   [ SYNSEM.LOCAL [ CAT.VAL [ SUBJ < [ LOCAL [ CONT.HOOK.INDEX #xarg,
                                               CAT cat-sat &
                                                   [ VAL [ SPR < >,
@@ -337,20 +351,23 @@ cop-lex := basic-verb-lex-super & trans-first-arg-raising-lex-item-2 & non-mod-l
 adj-comp-copula-verb-lex := cop-lex &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD adj ].
 
-be-cop-lex := adj-comp-copula-verb-lex.
-
-;;;is-cop-lex := be-cop-lex &
-;;;    [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
-;;;					 PER 3rd ] ].
+be-cop-lex := adj-comp-copula-verb-lex & verb-lex.
 
 ;;; Adjectives
 
 adj-lex := basic-intersective-adjective-lex.
 
 adj1-adj-lex := attr-adj-lex &
+"""
+14/4/2020
+added in '0-dlist' because sentences like 'it is cute' were able to become interrogatives
+but it could be a problem with subj-head-phrase instead
+"""
   [ SYNSEM.LOCAL.CAT [ POSTHEAD -,
                        VAL.SUBJ < >,
-                       HEAD.PRD + ] ].
+                       HEAD.PRD + ]
+;,    SYNSEM.NON-LOCAL.QUE 0-dlist ].
+			].
 
 ; Basic attributive adjective definition
 
@@ -363,13 +380,12 @@ added PRON - to prevent constructions like 'big he sleep'
 					      HEAD.PRON -,
                                               VAL.SPR cons ] ] > ].
 
-pred-adj-lex := adj-lex &
+pred-adj-lex := adj-lex & basic-one-arg &
 """
 2/4/2020
 added in this lex type for sentences with the predicative adj to parse
 This has an empty MOD list such that '[the cat][cute]' cannot be a Head-mod phrase.
 
-5/4/2020
 added in VAL.SPR < >, to ensure that the subj has to be an NP
 prevent multiple parses for sentences like "he cute"
 """
@@ -377,7 +393,9 @@ prevent multiple parses for sentences like "he cute"
       SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL [CAT [HEAD noun,
                                                VAL.SPR < > ], 
                                   	  CONT.HOOK.INDEX #ind ] ] >,
-      SYNSEM.LKEYS.KEYREL.ARG1 #ind ].
+      SYNSEM.LKEYS.KEYREL.ARG1 #ind
+;,      SYNSEM.NON-LOCAL.QUE 0-dlist 
+    ].
 
 ;;; Complementizers
 
@@ -389,6 +407,10 @@ complementizer-lex-item := raise-sem-lex-item & basic-one-arg &
 3/4/2020
 changed the HEAD value of #comps from verb to +vj
 to allow for sentences like 'he think that he cute'
+
+14/4/2020
+inserted INIT + to ensure the complementizer occurs only at the initial
+but removed it to account for the differences between 'is it' and the other complementizers
 """
   [ SYNSEM.LOCAL.CAT [ HEAD comp &
                             [ MOD < > ],
@@ -414,9 +436,13 @@ added this type in for that_comp
 
 7/4/2020
 added in SF prop to prevent constructions with "ask that"
+
+14/4/2020
+changed 
 """
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.SF prop,
-                   CAT [VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ] ].
+                   CAT [ VAL.COMPS.FIRST.LOCAL.CAT.MC -,
+			 HEAD.INIT + ] ] ].
 
 int_comps-complementizer-lex-item := complementizer-lex-item &
 """
@@ -425,7 +451,8 @@ added this type in for ask_comp
 to add in the SF question
 """
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.SF ques,
-                   CAT.VAL.COMPS.FIRST.LOCAL.CAT.MC - ] ].
+                   CAT [ VAL.COMPS.FIRST.LOCAL.CAT.MC -,
+			 HEAD.INIT + ] ] ].
 
 tr_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
     [ SYNSEM.LOCAL.CAT.VAL.COMPS < [LOCAL.CAT.HEAD comp ] >
@@ -607,29 +634,29 @@ probem solved: when the aux is able to modify anything after undergoing the subj
 ; The head of head-comp-phrase can't be: ['comp']
 
 head-comp-phrase := basic-head-1st-comp-phrase & head-initial &
-  [ SYNSEM.LOCAL.CAT.HEAD head].
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT + ].
 
 subj-head-phrase := decl-head-subj-phrase & head-final &
-  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < >].
-  [ SYNSEM [ LKEYS #lkeys,
-             LOCAL.CAT [ VAL [ COMPS < #subj . #comps >,
-                               SUBJ < >,	
-                               SPR #spr,
-                               SPEC #spec ],
-                         MC na,
-                         HEAD verb &
-                              [ INV +,
-				MOD #mod,
-                                FORM #form ] ] ],
-    DTR.SYNSEM [ LKEYS #lkeys,
-                 LOCAL.CAT [ VAL [ SUBJ < #subj >,
-                                   COMPS #comps,
-                                   SPR #spr,
-                                   SPEC #spec ],
-                             HEAD verb &
-                                  [ AUX +,
-				    MOD #mod,
-                                    FORM #form ] ] ] ].
+  [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
+;   SYNSEM [ LKEYS #lkeys,
+;             LOCAL.CAT [ VAL [ COMPS < #subj . #comps >,
+;                               SUBJ < >,	
+;                               SPR #spr,
+;                               SPEC #spec ],
+;                         MC na,
+;                         HEAD verb &
+;                              [ INV +,
+;				MOD #mod,
+;                                FORM #form ] ] ],
+;    DTR.SYNSEM [ LKEYS #lkeys,
+;                 LOCAL.CAT [ VAL [ SUBJ < #subj >,
+;                                   COMPS #comps,
+;                                   SPR #spr,
+;                                   SPEC #spec ],
+;                             HEAD verb &
+;                                  [ AUX +,
+;				    MOD #mod,
+;                                    FORM #form ] ] ] ].
 
 ; Bare NP phrase.  Consider modifying the PRED value of the quantifier relation
 ; introduced to match the semantic effect of bare NPs in your language.
@@ -640,7 +667,8 @@ bare-np-phrase := basic-bare-np-phrase &
 ; comp-head-phrase requires things that are [ HEAD comp ].
 
 comp-head-phrase := basic-head-1st-comp-phrase & head-final &
-  [ SYNSEM.LOCAL.CAT.HEAD comp ].
+  [ SYNSEM.LOCAL.CAT.HEAD comp,
+    HEAD-DTR.SYNSEM.LOCAL.CAT.HEAD.INIT - ].
 
 ; This rule takes [MC na] inverted phrases and licensesthem as main clauses with question semantics.
 ; 
@@ -649,10 +677,10 @@ int-cl := interrogative-clause & head-only &
   [ SYNSEM.LOCAL.CAT [ HEAD.INV +,
                        VAL #val,
                        MC + ],
-    HEAD-DTR.SYNSEM.LOCAL.CAT [ MC na,
-                                VAL #val &
+    HEAD-DTR.SYNSEM [ LOCAL.CAT [ MC na,
+                                  VAL #val &
                                     [ SUBJ < >,
-                                      COMPS < > ] ],
+                                      COMPS < > ] ] ],
     C-CONT.HOOK.INDEX.SF ques ].
 
 ;;;;;;;;;;;;;;;;;;
@@ -768,8 +796,14 @@ added in SF prop to prevent constructions with "think if ..."
 				     	     CONT.HOOK.INDEX.SF prop ] ] >,
                            SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].
 
-int_comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
+int_tr-comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL [ CAT.HEAD +vjc,
 					     CONT.HOOK.INDEX.SF ques ] ] >,
                            SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].
 
+;int_ditr-comp-verb-lex := ditr-clausal-verb-lex & clausal-third-arg-ditrans-lex-item &
+;  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT [ HEAD noun ],
+;					       [ HEAD.CASE acc ] ],
+;				   [ LOCAL [ CAT.HEAD +vjc,
+;					     CONT.HOOK.INDEX.SF ques ] ] >,
+;                          SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].
