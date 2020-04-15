@@ -1,6 +1,10 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
 ;;; Nouns
 
+dog := common_noun-noun-lex &
+  [ STEM < "dog" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_dog_n_1_rel" ].
+
 cat := common_noun-noun-lex &
   [ STEM < "cat" >,
     SYNSEM.LKEYS.KEYREL.PRED "_cat_n_1_rel" ].
@@ -28,6 +32,10 @@ I := 1sg_nom-noun-lex &
 he := 3sg_nom-noun-lex &
   [ STEM < "he" >,
     SYNSEM.LKEYS.KEYREL.PRED "_he_n_1_rel" ].
+
+she := 3sg_nom-noun-lex &
+  [ STEM < "she" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_she_n_1_rel" ].
 
 they := 3pl_nom-noun-lex &
   [ STEM < "they" >,
@@ -57,6 +65,10 @@ him := 3sg_acc-noun-lex &
   [ STEM < "him" >,
     SYNSEM.LKEYS.KEYREL.PRED "_him_n_1_rel" ].
 
+her := 3sg_acc-noun-lex &
+  [ STEM < "her" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_her_n_1_rel" ].
+
 ;;;everybody :=
 
 ;;; Adjectives
@@ -84,15 +96,24 @@ cute_attr := adj1-adj-lex &
 cute_pred := pred-adj-lex &
   [ STEM < "cute" >,
     SYNSEM.LKEYS.KEYREL.PRED "_cute_a_rel" ].
+
+white_attr := adj1-adj-lex &
+  [ STEM < "white" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_white_a_rel" ].
+
+white_pred := pred-adj-lex &
+  [ STEM < "white" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_white_a_rel" ].
+
 ;;; Verbs
 
 tekan := transitive_verb-verb-lex &
   [ STEM < "tekan" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_tekan_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_bully_v_rel" ].
 
 kacau := transitive_verb-verb-lex &
   [ STEM < "kacau" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_kacau_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_disturb_v_rel" ].
 
 chase := transitive_verb-verb-lex &
   [ STEM < "chase" >,
@@ -106,6 +127,10 @@ hurt := transitive_verb-verb-lex &
   [ STEM < "hurt" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hurt_v_rel" ].
 
+give := ditransitive_verb-verb-lex &
+  [ STEM < "give" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_give_v_rel" ].
+
 think_clause := decl_comp-verb-lex &
   [ STEM < "think" >,
     SYNSEM.LKEYS.KEYREL.PRED "_think_v_2_rel" ].
@@ -114,9 +139,9 @@ ask_tr-clause := int_tr-comp-verb-lex &
   [ STEM < "ask" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ask_v_rel" ].
 
-;ask_ditr-clause := int_ditr-comp-verb-lex &
-;  [ STEM < "ask" >,
-;    SYNSEM.LKEYS.KEYREL.PRED "_ask_v_rel" ].
+ask_ditr-clause := int_ditr-comp-verb-lex &
+  [ STEM < "ask" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_ask_v_rel" ].
 
 sleep := nom-intransitive-verb-lex &
 """
@@ -179,7 +204,7 @@ am_cop := be-cop-lex &
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 1st ] ].
 
-;;; Determiners
+;;; Determiners and their nouns
 
 the := definite-determiner-lex &
   [ STEM < "the" >,
@@ -230,9 +255,7 @@ every_q := singular-determiner-lex &
   [ STEM < "every" >,
     SYNSEM.LKEYS.KEYREL.PRED "_every_q_rel"].
 
-is%20it := qpart-lex-item &
-  [ STEM < "is",
-           "it" > ].
+;;; Adverbs
 
 never := never_neg-adv-lex &
   [ STEM < "never" >,
@@ -255,6 +278,12 @@ and2 := conj-lex &
   [ STEM < "and" >,
     SYNSEM.LKEYS.KEYREL.PRED "_and_coord_rel",
     CFORM "2" ].
+
+;;; Complementizers
+
+is%20it := qpart-lex-item &
+  [ STEM < "is",
+           "it" > ].
 
 that_comp := decl_comps-complementizer-lex-item &
   [ STEM <"that"> ].
