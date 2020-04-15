@@ -107,6 +107,10 @@ white_pred := pred-adj-lex &
 
 ;;; Verbs
 
+got_v := transitive_verb-verb-lex &
+  [ STEM < "got" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_have_v_rel" ].
+
 tekan := transitive_verb-verb-lex &
   [ STEM < "tekan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bully_v_rel" ].
@@ -206,6 +210,11 @@ am_cop := be-cop-lex &
 
 ;;; Determiners and their nouns
 
+
+a := singular-determiner-lex &
+  [ STEM < "a" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_a_q_rel" ].
+
 the := definite-determiner-lex &
   [ STEM < "the" >,
     SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
@@ -268,6 +277,10 @@ not := not_neg-adv-lex &
 already := aspect-adv-lex &
   [ STEM < "already" >,
     SYNSEM.LKEYS.KEYREL.PRED "already_rel" ].
+
+agak := agak-adv-lex &
+  [ STEM < "agak" >,
+    SYNSEM.LKEYS.KEYREL.PRED "roughly_rel" ].
 
 and1 := conj-lex &
   [ STEM < "and" >,

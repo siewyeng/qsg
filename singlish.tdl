@@ -540,6 +540,9 @@ created this lexical type for 'not'
 changed it to POSTHEAD + and the HEAD.MOD to be an AUX verb
 it is now able to produce the correct mrs for 'it does not hurt me'
 but is unable to modify adj
+
+15/4/2020
+added in a non-empty comps list in order to prevent 'it does hurt me not'
 """
   [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
                              COMPS < >,
@@ -548,7 +551,8 @@ but is unable to modify adj
                        POSTHEAD +,
                        HEAD.MOD < [ LOCAL.CAT [ HEAD verb &
 						     [AUX + ],
-                                                VAL [ SUBJ cons ] ] ] > ] ].
+                                                VAL [ SUBJ cons,
+						      COMPS < #comps > ] ] ] > ] ].
 
 aspect-adv-lex := basic-scopal-adverb-lex &
 
@@ -571,6 +575,20 @@ specified the FORM of the modified to be base but the sentence cannot parse afte
 						      AUX - ],
                                                 VAL [ SUBJ cons ] ] ] > ] ] ].
 
+agak-adv-lex := basic-scopal-adverb-lex &
+"""
+15/4/2020
+created new lex type for the adv agak
+"""
+  [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
+                             COMPS < >,
+                             SUBJ < >, 
+			     SPEC < >],
+                       POSTHEAD -,
+                       HEAD.MOD < [ LOCAL.CAT [ HEAD verb &
+						     [AUX + ],
+                                                VAL [ SUBJ cons,
+						      COMPS < > ] ] ] > ] ].
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules
 ;;;;;;;;;;;;;;;;;;;

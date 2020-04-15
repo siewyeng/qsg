@@ -171,6 +171,14 @@ The grammar was parsing sentences like 'i think it cute that' with "that" as a t
 
 In addition, there has been problems with sentences like 'it is cute' being able to be parsed as an int-cl in the node after it has passed through the subj-head phrase. This was a problem with the entry for subj-head--phrase which was copied from subj-v-inv-lrule. It has since been resolved by removing the incorrect extra information.
 
+New lexical entries were made to allow for a smoother machine translation to be done with the Mandarin Chinese grammar. Among them was "give". A new ditransitive verb lexical type was also created for the word. It inherits from main-verb-lex and ditransitive-lex-item. The case of the subjext is specifed to be nominative, while the cases for both objects are accusative. The entry only allows for constructions with the indirect object preceding the direct object due to the simple grammar which does not contain prepositions. The second complement is also specified to be PRON - in order to stop constructions like 'he give the cat me.'
+
+The Mandarin Chinese grammar also includes a lexical entry for "have". However, considering how it is an irregular verb (which is at the moment not supported by my grammar) and that "got" is a more suitable Singlish term for many meanings for "have", a lexical entry for "got"  will be included but with the predicate _have_v_rel (?).
+
+Upon further examination, I realised that "already" probably should not have a predicate as in functions to change the aspect and does not add any other meaning. Therefore, it should not be a scopal-adv. [no appropriate changes have been made yet]
+
+To match the Mandarin Chinese grammar, agak with the PRED of _roughly_a_rel was added into the lexicon. Since it seems to only modify AUX VPs like "can ..." or "know how to ...", it was made to be quite similar to not_neg-adv-lex with thhe exception of the HEAD.MOD features which includes AUX + and an empty VAL.COMPS list. Within not_neg-adv-lex, a non-empty COMPS list was added in its HEAD.MOD value to prevent constructions like "it does hurt me not", where "not" modifies the entire VP of "does hurt me", from being parsed.
+
 
 
 
