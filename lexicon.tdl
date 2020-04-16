@@ -221,7 +221,7 @@ a := singular-determiner-lex &
 
 the := definite-determiner-lex &
   [ STEM < "the" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_exist_q_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED _exist_q_rel ].
 
 those_q := plural-determiner-lex &
   [ STEM < "those" >,

@@ -88,6 +88,13 @@ perfect := aspect.
 experiential := aspect.
 no_aspect := aspect.
 
+
+
+exist_q_super_rel := predsort.
+exist_q_rel := exist_q_super_rel.
+_exist_q_rel := exist_q_super_rel.
+
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Types
 ;;;;;;;;;;;;;;;;;;;
@@ -725,7 +732,7 @@ subj-head-phrase := decl-head-subj-phrase & head-final &
 ; introduced to match the semantic effect of bare NPs in your language.
 
 bare-np-phrase := basic-bare-np-phrase &
-  [ C-CONT.RELS <! [ PRED "exist_q_rel" ] !> ].
+  [ C-CONT.RELS <! [ PRED exist_q_rel ] !> ].
 
 ; comp-head-phrase requires things that are [ HEAD comp ].
 
