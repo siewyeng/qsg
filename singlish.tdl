@@ -564,8 +564,8 @@ added in a non-empty comps list in order to prevent 'it does hurt me not'
                                                 VAL [ SUBJ cons,
 						      COMPS < #comps > ] ] ] > ] ].
 
+;considering already to be changed from an adverb to get rid of PRED
 aspect-adv-lex := basic-scopal-adverb-lex &
-
 """
 8/4/2020
 added in this type for 'already'
@@ -605,6 +605,7 @@ added in AUX + to the MOD feature.
 						     [AUX + ],
                                                 VAL [ SUBJ cons,
 						      COMPS < > ] ] ] > ] ].
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules
 ;;;;;;;;;;;;;;;;;;;

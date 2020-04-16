@@ -165,6 +165,10 @@ sing := nom-intransitive-verb-lex &
   [ STEM < "sing" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sing_v_rel" ].
 
+know := nom-intransitive-verb-lex &
+  [ STEM < "know" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_know_v_rel" ].
+
 think_intr := nom-intransitive-verb-lex &
   [ STEM < "think" >,
     SYNSEM.LKEYS.KEYREL.PRED "_think_v_1_rel" ].
