@@ -179,6 +179,17 @@ Upon further examination, I realised that "already" probably should not have a p
 
 To match the Mandarin Chinese grammar, agak with the PRED of _roughly_a_rel was added into the lexicon. Since it seems to only modify AUX VPs like "can ..." or "know how to ...", it was made to be quite similar to not_neg-adv-lex with thhe exception of the HEAD.MOD features which includes AUX + and an empty VAL.COMPS list. Within not_neg-adv-lex, a non-empty COMPS list was added in its HEAD.MOD value to prevent constructions like "it does hurt me not", where "not" modifies the entire VP of "does hurt me", from being parsed.
 
+After the first half of week 10, and the above tweaks to the grammar, both the number of false negatives and positives decreased.
+False negatives:
+2. That ant the cat eat
+33. He never.
+			--> because I changed prp to be a finite instead of a nonfinite FORM, "it 				    sleeping" can parse as a sentence
+73. He already sleep. 
 
+False positives:
+17. That cat sleeps --> because a CP can parse like a sentence
 
+In order to parse 73, the POSTHEAD + value was taken away from aspect-adv-lex. However, this allowed for constructions like "he can already sleep" which is ungrammatical. Thus, maybe a better was would be to prevent a verb that has been modiified by "already" from being a COMPS for the auxiliary verb. In order to stop this, a new ASPECT value of no_aspect was created and the ASPECT value of the complement of the auxiliary verb "can" was given that value. The same was done for does_subj-raise-aux-no-pred. This corrects the tree made as trees like 'he can [sleep already]' are stopped in and only those like 'he [can sleep] already' are allowed instead. 
+
+Also, the prp cannot be used with the aspect adv in the current grammar which is not the case in the actual language.
 

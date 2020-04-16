@@ -107,6 +107,10 @@ white_pred := pred-adj-lex &
 
 ;;; Verbs
 
+want := transitive_verb-verb-lex &
+  [ STEM < "want" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
+
 got_v := transitive_verb-verb-lex &
   [ STEM < "got" >,
     SYNSEM.LKEYS.KEYREL.PRED "_have_v_rel" ].

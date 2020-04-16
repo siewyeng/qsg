@@ -86,6 +86,7 @@ past := tense.
 
 perfect := aspect.
 experiential := aspect.
+no_aspect := aspect.
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Types
@@ -351,11 +352,20 @@ does_subj-raise-aux-no-pred := subj-raise-aux & trans-first-arg-raising-lex-item
 """
 added in this type to distinguish 'does' from the 'is -ing'
 previously, both 'it does sleep' and 'it does sleeping' were parsed
+
+16/4/2020
+added in the aspect value for the COMPS
 """
-			  [SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base].
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
+		 			     CONT.HOOK.INDEX.E.ASPECT no_aspect ] ].
 
 can-aux-lex := subj-raise-aux-with-pred &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base ].
+"""
+16/4/2020
+added in the aspect such that can will not take a COMPS that has been modified by 'already'
+"""
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
+		 			     CONT.HOOK.INDEX.E.ASPECT no_aspect ] ].
 
 ;;; Copulas
 
@@ -562,23 +572,29 @@ added in this type for 'already'
 
 13/4/2020
 specified the FORM of the modified to be base but the sentence cannot parse after that. To come back to this after sorting out the FORM values
+
+16/4/2020
+removed the AUX - to allow for 'he can sleep already' for already to MOD 'can sleep'
+added in the empty COMPS in the MOD
 """
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT perfect,
 		   CAT [ VAL [ SPR < >,
-                             COMPS < >,
-                             SUBJ < >, 
-			     SPEC < >],
-                       POSTHEAD +,
-                       HEAD.MOD < [ LOCAL.CAT [ HEAD verb &
-						     [
+                               COMPS < >,
+                               SUBJ < >, 
+			       SPEC < >],
+;                      POSTHEAD +,
+                       HEAD.MOD < [ LOCAL.CAT [ HEAD verb, 
+;						     [
 ;FORM base,
-						      AUX - ],
-                                                VAL [ SUBJ cons ] ] ] > ] ] ].
+;						      AUX - ],
+                                                VAL [ SUBJ cons,
+						      COMPS < > ] ] ] > ] ] ].
 
 agak-adv-lex := basic-scopal-adverb-lex &
 """
 15/4/2020
 created new lex type for the adv agak
+added in AUX + to the MOD feature.
 """
   [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
                              COMPS < >,
