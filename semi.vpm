@@ -59,6 +59,7 @@ E.TENSE : E.TENSE
 E.ASPECT : E.ASPECT
   perfect <> perfect
   experiential <> experiential
+  no_aspect >> *
   * <> *
 
 E.MOOD : E.MOOD
