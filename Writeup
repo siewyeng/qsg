@@ -205,3 +205,9 @@ can sleep --> but this is a different type of semantics as "there" is not the su
 
 --> how do I make it such that the base FORM of "got" is "have"??? because aux cannot go with "got"
 
+Added in "want" as a transitive verb when the COMPS is a noun, and as an aux that can have COMPS of FORM base or toinf. A new form was added under the nonfinite form. And a new type was also created for "to".
+
+to-infinitive-lex := trans-first-arg-raising-lex-item-2 & verb-lex &
+  [ SYNSEM.LOCAL.CAT [ HEAD.FORM toinf,
+		       VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base ] ].
+

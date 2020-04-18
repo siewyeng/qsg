@@ -407,8 +407,11 @@ However, in the case of 'there can...', "there" is not actually the subject
 	     #comps > ].
 
 want-aux-lex := subj-raise-aux-with-pred &
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM toinf,
-		 			     CONT.HOOK.INDEX.E.ASPECT no_aspect ] ].
+  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM nonfinite,
+		 			     CONT.HOOK.INDEX.E.ASPECT no_aspect ],
+    ARG-ST < [ LOCAL.CAT.HEAD.LOC - ],
+	     #comps > ].
+
 
 ;added for constructions like "I want to sleep."
 to-infinitive-lex := trans-first-arg-raising-lex-item-2 & verb-lex &

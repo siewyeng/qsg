@@ -147,6 +147,10 @@ think_clause := decl_comp-verb-lex &
   [ STEM < "think" >,
     SYNSEM.LKEYS.KEYREL.PRED "_think_v_2_rel" ].
 
+know_clause := decl_comp-verb-lex &
+  [ STEM < "know" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_know_v_2_rel" ].
+
 ask_tr-clause := int_tr-comp-verb-lex &
   [ STEM < "ask" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ask_v_rel" ].
@@ -169,9 +173,9 @@ sing := nom-intransitive-verb-lex &
   [ STEM < "sing" >,
     SYNSEM.LKEYS.KEYREL.PRED "_sing_v_rel" ].
 
-know := nom-intransitive-verb-lex &
+know_intr := nom-intransitive-verb-lex &
   [ STEM < "know" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_know_v_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_know_v_1_rel" ].
 
 think_intr := nom-intransitive-verb-lex &
   [ STEM < "think" >,
@@ -204,11 +208,7 @@ am_aux := prp_subj-raise-aux-no-pred &
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 1st ] ].
 
-want_aux1 := will-aux-lex &
-  [ STEM < "want" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
-
-want_aux2 := want-aux-lex &
+want_aux := want-aux-lex &
   [ STEM < "want" >,
     SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
 
