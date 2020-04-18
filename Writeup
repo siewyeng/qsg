@@ -193,3 +193,15 @@ In order to parse 73, the POSTHEAD + value was taken away from aspect-adv-lex. H
 
 Also, the prp cannot be used with the aspect adv in the current grammar which is not the case in the actual language.
 
+Added in "there_n" as a translation for the Mandarin "nali". Since the word in BP's grammar functions only as the subject of the sentence, this "there" will be a noun. However, since this "there" functions in sentences with "got" and not other verbs in Singlish, a new HEAD feature LOC was created. Most verbs will have their subj as LOC - except for "got" which does not specify its LOC value. The lex type of "there" also specifies that it has a CASE nom since it can only act as a subject.
+Now, There: 
+got cat
+*sleep
+can sleep --> but this is a different type of semantics as "there" is not the subj of "can" (made in unngrammatical again)
+*does sleep
+*hurt me
+*give me the cat
+*will got cat
+
+--> how do I make it such that the base FORM of "got" is "have"??? because aux cannot go with "got"
+

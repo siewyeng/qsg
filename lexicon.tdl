@@ -179,7 +179,7 @@ think_intr := nom-intransitive-verb-lex &
 
 ;;; Auxiliaries
 
-will := can-aux-lex &
+will := will-aux-lex &
   [ STEM < "will" >,
     SYNSEM.LKEYS.KEYREL.PRED "_will_v_rel" ].
 
@@ -187,7 +187,7 @@ does := does_subj-raise-aux-no-pred &
   [ STEM < "does" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ].
-can := can-aux-lex &
+can := will-aux-lex &
   [ STEM < "can" >,
     SYNSEM.LKEYS.KEYREL.PRED "_can_v_rel" ].
 
@@ -203,6 +203,18 @@ am_aux := prp_subj-raise-aux-no-pred &
   [ STEM < "am" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 1st ] ].
+
+want_aux1 := will-aux-lex &
+  [ STEM < "want" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
+
+want_aux2 := want-aux-lex &
+  [ STEM < "want" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
+
+;to was created just for "want"
+to := to-infinitive-lex &
+  [ STEM < "to" > ].
 
 ;;; Copulas
 
