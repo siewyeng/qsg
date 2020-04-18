@@ -24,6 +24,11 @@ def read_in():
         lines[i] = lines[i].replace('_me_n_1_rel', '_I_n_rel')
         lines[i] = lines[i].replace('_him_n_1_rel', '_he_n_rel')
         lines[i] = lines[i].replace('_her_n_1_rel', '_she_n_rel')
+        lines[i] = lines[i].replace('_roughly_rel', '_roughly_v_rel')
+        lines[i] = lines[i].replace('_can_v_rel', '_can_v_2_rel')
+
+
+
     #print lines
     return lines
 

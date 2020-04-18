@@ -1,5 +1,5 @@
 ;;; -*- Mode: TDL; Coding: utf-8 -*-
-singular-lr := singular-lex-rule.
+;singular-lr := singular-lex-rule.
 
 base-lr := base-lex-rule.
 

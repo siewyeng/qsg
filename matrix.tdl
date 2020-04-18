@@ -1430,7 +1430,8 @@ basic-binary-phrase := phrase &
                               LAST #scmiddle1 ],
                       ICONS [ LIST #icfirst,
                               LAST #icmiddle1 ] ] ] ],
-       sign & [ SYNSEM.LOCAL local &
+       sign & [ INFLECTED infl-satisfied,
+		SYNSEM.LOCAL local &
                  [ CONT [ RELS [ LIST #middle1,
                                  LAST #middle2 ],
                       HCONS [ LIST #scmiddle1,
