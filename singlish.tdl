@@ -416,7 +416,8 @@ want-aux-lex := subj-raise-aux-with-pred &
 ;added for constructions like "I want to sleep."
 to-infinitive-lex := trans-first-arg-raising-lex-item-2 & verb-lex &
   [ SYNSEM.LOCAL.CAT [ HEAD.FORM toinf,
-		       VAL.COMPS.FIRST.LOCAL.CAT.HEAD.FORM base ] ].
+		       VAL.COMPS.FIRST.LOCAL.CAT [ HEAD.FORM base,
+						   VAL.COMPS < > ] ] ].
 ;  [ ARG-ST < [ LOCAL.CONT.HOOK.ICONS-KEY.IARG1 #clause &
 ;					       [ LOCAL.CAT.HEAD.FORM base ]  ],
 ;	     [ LOCAL.CONT.HOOK.CLAUSE-KEY #clause ] > ].
@@ -921,7 +922,12 @@ int_tr-comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
                            SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].
 
 int_ditr-comp-verb-lex := ditr-clausal-verb-lex & clausal-third-arg-ditrans-lex-item &
-  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT.HEAD.CASE acc ],
+"""
+18/4/2020
+Ensure first comps is a bare NP
+"""
+  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL.CAT [ HEAD.CASE acc,
+						 VAL.SPR < > ] ],
 				   [ LOCAL [ CAT.HEAD comp,
 					     CONT.HOOK.INDEX.SF ques ] ] >,
                           SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].

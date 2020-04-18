@@ -191,6 +191,7 @@ does := does_subj-raise-aux-no-pred &
   [ STEM < "does" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ].
+
 can := will-aux-lex &
   [ STEM < "can" >,
     SYNSEM.LKEYS.KEYREL.PRED "_can_v_rel" ].
