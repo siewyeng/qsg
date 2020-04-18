@@ -69,6 +69,10 @@ her := 3sg_acc-noun-lex &
   [ STEM < "her" >,
     SYNSEM.LKEYS.KEYREL.PRED "_her_n_1_rel" ].
 
+there_n := loc_noun-noun-lex &
+  [ STEM < "there" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_there_n_rel" ].
+
 ;;;everybody :=
 
 ;;; Adjectives
@@ -107,31 +111,31 @@ white_pred := pred-adj-lex &
 
 ;;; Verbs
 
-want := transitive_verb-verb-lex &
+want := gentr_verb-verb-lex &
   [ STEM < "want" >,
     SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
 
-got_v := transitive_verb-verb-lex &
+got_v := nom-acc-transitive-verb-lex  &
   [ STEM < "got" >,
     SYNSEM.LKEYS.KEYREL.PRED "_have_v_rel" ].
 
-tekan := transitive_verb-verb-lex &
+tekan := gentr_verb-verb-lex &
   [ STEM < "tekan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bully_v_rel" ].
 
-kacau := transitive_verb-verb-lex &
+kacau := gentr_verb-verb-lex &
   [ STEM < "kacau" >,
     SYNSEM.LKEYS.KEYREL.PRED "_disturb_v_rel" ].
 
-chase := transitive_verb-verb-lex &
+chase := gentr_verb-verb-lex &
   [ STEM < "chase" >,
     SYNSEM.LKEYS.KEYREL.PRED "_chase_v_rel" ].
 
-eat := transitive_verb-verb-lex &
+eat := gentr_verb-verb-lex &
   [ STEM < "eat" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
-hurt := transitive_verb-verb-lex &
+hurt := gentr_verb-verb-lex &
   [ STEM < "hurt" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hurt_v_rel" ].
 

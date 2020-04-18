@@ -22,8 +22,10 @@ head :+ [ PRON bool,
     AUX bool,
     PRD bool,
     FORM form,
-    INIT bool ].
+    INIT bool,
+    LOC bool ].
 ; 14/4/2020 added in INIT but it does not do anything
+; 18/4/2020 added in LOC to distiguish the Singlish "here" and "there" from other nouns
 
 noun :+ [ CASE case ].
 
@@ -130,6 +132,11 @@ acc_pronoun-noun-lex := pronoun-noun-lex & no-spr-noun-lex &
   [ SYNSEM.LOCAL.CAT.HEAD [ PRON +,
                             CASE acc ] ].
 
+loc_noun-noun-lex := no-spr-noun-lex &
+  [ SYNSEM.LOCAL [ CAT.HEAD [ LOC +,
+			      CASE nom ],
+		   CONT.HOOK.INDEX.PNG.COUNT - ] ].
+
 common_noun-noun-lex := noun-lex &
 """
 7/4/2020
@@ -219,7 +226,8 @@ aux-lex := verb-lex &
 
 intransitive-verb-lex := main-verb-lex & intransitive-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < >,
-    ARG-ST.FIRST.LOCAL.CAT.HEAD noun ].
+    ARG-ST.FIRST.LOCAL.CAT.HEAD noun &
+			      [ LOC - ] ].
 
 transitive-verb-lex := main-verb-lex & transitive-lex-item &
   [ SYNSEM.LOCAL.CAT.VAL.COMPS < #comps >,
@@ -255,7 +263,10 @@ nom-acc-transitive-verb-lex := transitive-verb-lex &
              [ LOCAL.CAT.HEAD noun &
                               [ CASE acc ] ] > ].
 
-transitive_verb-verb-lex := nom-acc-transitive-verb-lex.
+gentr_verb-verb-lex := nom-acc-transitive-verb-lex &
+  [ ARG-ST < [ LOCAL.CAT.HEAD.LOC - ],
+	     #object > ].
+
 
 intransitive_verb-verb-lex := intransitive-verb-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.FORM form ].
