@@ -736,9 +736,12 @@ added in #mod in the HEAD and DTR values to ensure that they have the same MOD v
 
 probem solved: when the aux is able to modify anything after undergoing the subj-inv 
 
+19/4/2020
+added in SF que to allow "she think will the ant sleep" to be stopped
+
 """ 
   [ SYNSEM [ LKEYS #lkeys,
-             LOCAL.CAT [ VAL [ COMPS < #subj . #comps >,
+             LOCAL [ CAT [ VAL [ COMPS < #subj . #comps >,
                                SUBJ < >,
                                SPR #spr,
                                SPEC #spec ],
@@ -746,7 +749,8 @@ probem solved: when the aux is able to modify anything after undergoing the subj
                          HEAD verb &
                               [ INV +,
 				MOD #mod,
-                                FORM #form ] ] ],
+                                FORM #form ] ], 
+		      CONT.HOOK.INDEX.SF ques ] ],
     DTR.SYNSEM [ LKEYS #lkeys,
                  LOCAL.CAT [ VAL [ SUBJ < #subj >,
                                    COMPS #comps,

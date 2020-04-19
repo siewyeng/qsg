@@ -217,7 +217,39 @@ NOTE: 1 readings, added 354 / 182 edges to chart (33 fully instantiated, 53 acti
 NOTE: parsed 1 / 1 sentences, avg 1604k, time 0.02053s
 atomic_dg: no such type as `no_aspect'
 NOTE: transfer did 0 successful unifies and 0 failed ones
-;but give sentences dont work in general anyway
+
+;after the Mandarin give was fixed, and no_aspect was added to cmn
+NOTE: 1 readings, added 354 / 182 edges to chart (33 fully instantiated, 53 actives used, 27 passives used)	RAM: 1604k
+NOTE: parsed 1 / 1 sentences, avg 1604k, time 0.02653s
+一个 树 要 给 你们 我
+我 要 给 一个 树 你们
+你们 要 给 一个 树 我
+我 要 给 一只 树 你们
+你 要 给 一个 树 我
+你们 要 给 一只 树 我
+一个 树 要 给 我 你们
+你们 要 给 我 一个 树
+你 要 给 一只 树 我
+一个 树 要 给 你 我
+你们 要 给 我 一只 树
+你 要 给 我 一个 树
+我 要 给 你们 一个 树
+我 要 给 一个 树 你
+你 要 给 我 一只 树
+我 要 给 你 一个 树
+我 要 给 一只 树 你
+一只 树 要 给 我 你们
+一只 树 要 给 你们 我
+我 要 给 你们 一只 树
+一只 树 要 给 你 我
+我 要 给 你 一只 树
+一个 树 要 给 我 你
+一只 树 要 给 我 你
+NOTE: 127 passive, 710 active edges in final generation chart; built 178 passives total. [24 results]
+
+NOTE: generated 1 / 1 sentences, avg 6277k, time 0.03376s
+NOTE: transfer did 3 successful unifies and 1 failed ones
+
 
     19. She ask me if he sleeps.
 NOTE: 1 readings, added 234 / 91 edges to chart (17 fully instantiated, 44 actives used, 15 passives used)	RAM: 873k

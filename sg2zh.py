@@ -104,7 +104,7 @@ pred_map = {
     # "_happy_a_rel": "_happy_a_rel",
     # "_white_a_rel": "_white_a_rel",
     # "_big_a_rel": "_big_a_rel",
-    # "_very_a_rel":
+    "_very_a_rel": "_very_rel",
     # "_have_v_rel": "_have_v_rel",
     # "_want_v_rel": "_want_v_rel",
     # "_know_v_rel": "_know_v_rel",

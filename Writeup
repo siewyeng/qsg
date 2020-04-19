@@ -217,3 +217,32 @@ The indirect object for "ask" was also given an empty SPR list in order for all 
 
 Also, to ensure that "to" takes a full VP as its COMPS, the COMPS list of its complement was set to be empty. This gets rid of the previously possible construction "he wants [to give] me a cat."
 
+siewyeng@sy-ThinkPad-L460:~/delphin/sing_gram$ echo "the ants think that she will sleep" | ace -g qsg.dat -Tfq | ace -g qsg.dat -e 
+NOTE: 2 readings, added 303 / 130 edges to chart (25 fully instantiated, 58 actives used, 22 passives used)	RAM: 1247k
+NOTE: parsed 1 / 1 sentences, avg 1247k, time 0.02533s
+The ants think will she sleep
+The ants think will she sleep
+The ants think she will sleep
+The ants thinking she will sleep
+The ants think she will sleep
+The ants thinking will she sleep
+The ants thinking she will sleep
+The ants thinking will she sleep
+NOTE: 33 passive, 234 active edges in final generation chart; built 62 passives total. [8 results]
+
+The ants think will she sleep
+The ants thinking she will sleep
+The ants think will she sleep
+The ants thinking she will sleep
+The ants thinking will she sleep
+The ants thinking will she sleep
+The ants think she will sleep
+The ants think she will sleep
+NOTE: 33 passive, 234 active edges in final generation chart; built 62 passives total. [8 results]
+
+NOTE: generated 2 / 2 sentences, avg 2769k, time 0.06938s
+NOTE: transfer did 2 successful unifies and 4 failed ones
+
+--> "the ants think she will sleep" should be different from "the ants think will she sleep"
+Thus, maybe the comps of "think" cannot be a question.
+
