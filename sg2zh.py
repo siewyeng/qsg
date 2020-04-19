@@ -31,23 +31,24 @@ Test sentences:
 
     (Singlish)
     1. He does eat the cat
-    2. Happy dogs are singing
-    3. I ask if he happy
+    2. Happy dogs are singing --> ill-formed input mrs
+    3. White ant want a big dog.
+    ;changed from i ask if he happy because 'he happy" cannot be translated like that
     4. The cat and the tree chase me.
-    5. He can tekan me already
+    5. He can tekan me already.
     6. I never eat the cat.
     7. There got a cat and a dog.
-    8. Ants are big and dogs are cute.
+    8. Ants are big and dogs are cute. --> :(
     9. I already got everything.
-    10. Is that cute.
-    11. The tree think he agak can sing.
+    10. Does he sleep.
+    11. The tree think he agak can sing.  *over generation from "roughly"
     12. The glass does hurt the tree.
-    13. Those ants think that she will sleep.
+    13. Those ants think that she will sleep. *over generation from "will"
     14. A cat kacau the dog.
     15. Everything is big.
     16. Every cat chases a dog.
-    17. I am kacauing the cat.
-    18. I want to give you a tree.
+    17. I am kacauing the cat. --> ill-formed input mrs
+    18. I want to give you a tree. *over generation from "give"
     19. She ask me if he sleeps.
     20. is it he eat this.
     
@@ -118,13 +119,12 @@ pred_map = {
     # "_give_v_rel": "_give_v_rel",
     "_think_v_2_rel": "_think_v_rel",
     # "_ask_v_rel": "_ask_v_rel",
-    "_can_v_1_rel": "_can_v_rel",
-    "_can_v_2_rel": "_can_v_rel",
+    "_can_v_rel": "_can_v_2_rel",
     "_roughly_a_rel": "_roughly_v_rel",
     "_already_a_rel": "_already_v_rel",
     # "_will_v_rel": "_will_v_rel",
-    "neg2_rel": "neg_rel",
-    "neg1_rel": "_not_v_rel",
+    "neg2_rel": "_neg2_rel",
+    "neg1_rel": "_neg1_rel",
     # "_that_q_rel": "_that_q_rel",
     # "_animal_n_rel": "",
     # "_a_q_rel": "_a_q_rel",

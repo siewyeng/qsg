@@ -6,6 +6,15 @@ NOTE: parsed 1 / 1 sentences, avg 497k, time 0.01863s
 atomic_dg: no such type as `no_aspect'
 NOTE: transfer did 0 successful unifies and 0 failed ones
 
+NOTE: 1 readings, added 165 / 50 edges to chart (13 fully instantiated, 31 actives used, 10 passives used)	RAM: 498k
+NOTE: parsed 1 / 1 sentences, avg 498k, time 0.01469s
+他 吃 猫
+NOTE: 11 passive, 88 active edges in final generation chart; built 11 passives total. [1 results]
+
+NOTE: generated 1 / 1 sentences, avg 668k, time 0.00655s
+NOTE: transfer did 0 successful unifies and 3 failed ones
+
+
 2. happy dogs are singing
 NOTE: 1 readings, added 157 / 70 edges to chart (14 fully instantiated, 32 actives used, 10 passives used)	RAM: 696k
 NOTE: parsed 1 / 1 sentences, avg 696k, time 0.01387s
@@ -40,6 +49,17 @@ NOTE: parsed 1 / 1 sentences, avg 776k, time 0.01615s
 atomic_dg: no such type as `perfect'
 NOTE: transfer did 0 successful unifies and 0 failed ones
 ; to change aspect name!
+
+NOTE: 1 readings, added 198 / 83 edges to chart (15 fully instantiated, 40 actives used, 12 passives used)	RAM: 777k
+NOTE: parsed 1 / 1 sentences, avg 777k, time 0.01868s
+他 可以 已经 欺负 我
+他 已经 可以 欺负 我 吗
+他 已经 可以 欺负 我
+NOTE: 66 passive, 360 active edges in final generation chart; built 76 passives total. [3 results]
+
+NOTE: generated 1 / 1 sentences, avg 3139k, time 0.02598s
+NOTE: transfer did 3 successful unifies and 3 failed ones
+
 
 6. I never eat the cat.
 NOTE: 1 readings, added 155 / 40 edges to chart (12 fully instantiated, 26 actives used, 10 passives used)	RAM: 404k
@@ -89,36 +109,7 @@ NOTE: generated 1 / 1 sentences, avg 3016k, time 0.01112s
 NOTE: transfer did 2 successful unifies and 2 failed ones
 
     8. Ants are big and dogs are cute.
-NOTE: 1 readings, added 274 / 102 edges to chart (26 fully instantiated, 54 actives used, 21 passives used)	RAM: 927k
-NOTE: parsed 1 / 1 sentences, avg 927k, time 0.00863s
-那里 有 一个 猫 和 一个 狗
-那里 有 了 一个 猫 和 一个 狗
-那里 在 有 一个 猫 和 一个 狗
-那里 有 了 一只 猫 和 一个 狗
-那里 在 有 一只 猫 和 一个 狗
-那里 有 了 一个 猫 和 一只 狗
-那里 在 有 一个 猫 和 一只 狗
-那里 有 了 一只 猫 和 一只 狗
-那里 在 有 一只 猫 和 一只 狗
-那里 有 一个 猫 和 一个 狗
-那里 在 有 一个 猫 和 一个 狗
-那里 有 一只 猫 和 一个 狗
-那里 在 有 一只 猫 和 一个 狗
-那里 有 一个 猫 和 一只 狗
-那里 在 有 一个 猫 和 一只 狗
-那里 有 一只 猫 和 一只 狗
-那里 在 有 一只 猫 和 一只 狗
-那里 有 了 一个 猫 和 一个 狗
-那里 有 一只 猫 和 一个 狗
-那里 有 了 一只 猫 和 一个 狗
-那里 有 一个 猫 和 一只 狗
-那里 有 了 一个 猫 和 一只 狗
-那里 有 一只 猫 和 一只 狗
-那里 有 了 一只 猫 和 一只 狗
-NOTE: 80 passive, 277 active edges in final generation chart; built 97 passives total. [24 results]
 
-NOTE: generated 1 / 1 sentences, avg 3016k, time 0.01112s
-NOTE: transfer did 2 successful unifies and 2 failed ones
 
     9. I already got everything.
 NOTE: 1 readings, added 121 / 34 edges to chart (9 fully instantiated, 21 actives used, 8 passives used)	RAM: 344k
@@ -147,14 +138,24 @@ NOTE: generated 1 / 1 sentences, avg 2131k, time 0.01140s
 NOTE: transfer did 3 successful unifies and 0 failed ones
 
 
-    10. Is that cute.
+    10. Is that cute. --> does he sleep
 NOTE: 1 readings, added 127 / 64 edges to chart (16 fully instantiated, 18 actives used, 11 passives used)	RAM: 625k
 NOTE: parsed 1 / 1 sentences, avg 625k, time 0.01632s
 NOTE: 8 passive, 53 active edges in final generation chart; built 9 passives total. [0 results]
 
 NOTE: generated 0 / 1 sentences, avg 372k, time 0.00506s
 NOTE: transfer did 3 successful unifies and 0 failed ones
-;inversion is not translated
+;inversion is not translated-not true
+
+NOTE: 1 readings, added 99 / 40 edges to chart (10 fully instantiated, 21 actives used, 6 passives used)	RAM: 381k
+NOTE: parsed 1 / 1 sentences, avg 381k, time 0.01536s
+他 睡觉
+他 睡觉 吗
+NOTE: 8 passive, 62 active edges in final generation chart; built 8 passives total. [2 results]
+
+NOTE: generated 1 / 1 sentences, avg 479k, time 0.00670s
+NOTE: transfer did 1 successful unifies and 2 failed ones
+
 
     11. The tree think he agak can sing.
 NOTE: 1 readings, added 290 / 118 edges to chart (23 fully instantiated, 54 actives used, 20 passives used)	RAM: 1101k
@@ -162,17 +163,89 @@ NOTE: parsed 1 / 1 sentences, avg 1101k, time 0.01321s
 atomic_dg: no such type as `no_aspect'
 NOTE: transfer did 0 successful unifies and 0 failed ones
 
+NOTE: 1 readings, added 290 / 118 edges to chart (23 fully instantiated, 54 actives used, 20 passives used)	RAM: 1101k
+NOTE: parsed 1 / 1 sentences, avg 1101k, time 0.01927s
+树 大概 觉得 了 他 可以 唱歌
+树 大概 可以 觉得 了 他 唱歌
+树 大概 可以 在 觉得 他 唱歌
+树 可以 大概 觉得 了 他 唱歌
+树 觉得 他 可以 大概 唱歌
+树 可以 在 觉得 他 大概 唱歌
+树 在 觉得 他 大概 可以 唱歌 吗
+树 可以 大概 在 觉得 他 唱歌 吗
+树 可以 觉得 他 大概 唱歌
+树 大概 可以 觉得 了 他 唱歌 吗
+树 可以 觉得 了 他 大概 唱歌
+树 在 觉得 他 大概 可以 唱歌
+树 大概 觉得 了 他 可以 唱歌 吗
+树 可以 觉得 了 他 大概 唱歌 吗
+树 可以 大概 觉得 了 他 唱歌 吗
+树 大概 在 觉得 他 可以 唱歌
+树 可以 在 觉得 他 大概 唱歌 吗
+树 觉得 他 大概 可以 唱歌 吗
+树 大概 可以 觉得 他 唱歌
+树 在 觉得 他 可以 大概 唱歌
+树 觉得 他 大概 可以 唱歌
+树 大概 可以 觉得 了 他 唱歌 吗
+树 觉得 了 他 大概 可以 唱歌 吗
+树 大概 觉得 他 可以 唱歌
+树 大概 可以 在 觉得 他 唱歌 吗
+树 觉得 了 他 可以 大概 唱歌
+树 大概 可以 觉得 了 他 唱歌 吗 吗
+树 可以 觉得 他 大概 唱歌 吗
+树 大概 在 觉得 他 可以 唱歌 吗
+树 可以 大概 在 觉得 他 唱歌
+树 可以 大概 觉得 他 唱歌 吗
+树 大概 可以 觉得 他 唱歌 吗
+树 可以 大概 觉得 他 唱歌
+树 觉得 了 他 大概 可以 唱歌
+树 大概 可以 在 觉得 他 唱歌 吗
+树 大概 觉得 他 可以 唱歌 吗
+树 大概 可以 觉得 他 唱歌 吗
+树 大概 可以 在 觉得 他 唱歌 吗 吗
+树 大概 可以 觉得 他 唱歌 吗 吗
+NOTE: 177 passive, 1082 active edges in final generation chart; built 296 passives total. [39 results]
+
+NOTE: generated 1 / 1 sentences, avg 10379k, time 0.03878s
+NOTE: transfer did 3 successful unifies and 1 failed ones
+
+
     12. The glass does hurt the tree.
 NOTE: 1 readings, added 205 / 62 edges to chart (16 fully instantiated, 38 actives used, 12 passives used)	RAM: 599k
 NOTE: parsed 1 / 1 sentences, avg 599k, time 0.00886s
 atomic_dg: no such type as `no_aspect'
 NOTE: transfer did 0 successful unifies and 0 failed ones
 
+NOTE: 1 readings, added 205 / 62 edges to chart (16 fully instantiated, 38 actives used, 12 passives used)	RAM: 600k
+NOTE: parsed 1 / 1 sentences, avg 600k, time 0.01324s
+玻璃 伤害 树
+NOTE: 11 passive, 88 active edges in final generation chart; built 11 passives total. [1 results]
+
+NOTE: generated 1 / 1 sentences, avg 668k, time 0.00630s
+NOTE: transfer did 0 successful unifies and 3 failed ones
+
     13. Those ants think that she will sleep.
 NOTE: 1 readings, added 310 / 136 edges to chart (26 fully instantiated, 58 actives used, 23 passives used)	RAM: 1274k
 NOTE: parsed 1 / 1 sentences, avg 1274k, time 0.01692s
 atomic_dg: no such type as `no_aspect'
 NOTE: transfer did 0 successful unifies and 0 failed ones
+
+NOTE: 1 readings, added 303 / 130 edges to chart (25 fully instantiated, 58 actives used, 22 passives used)	RAM: 1215k
+NOTE: parsed 1 / 1 sentences, avg 1215k, time 0.02014s
+蚂蚁 即将要 觉得 了 她 睡觉
+蚂蚁 即将要 在 觉得 她 睡觉 吗
+蚂蚁 即将要 在 觉得 她 睡觉
+蚂蚁 即将要 觉得 她 睡觉 吗
+蚂蚁 即将要 觉得 她 睡觉
+蚂蚁 即将要 觉得 了 她 睡觉 吗
+蚂蚁 觉得 了 她 即将要 睡觉
+蚂蚁 觉得 她 即将要 睡觉
+蚂蚁 在 觉得 她 即将要 睡觉
+NOTE: 77 passive, 463 active edges in final generation chart; built 107 passives total. [9 results]
+
+NOTE: generated 1 / 1 sentences, avg 4306k, time 0.01574s
+NOTE: transfer did 3 successful unifies and 2 failed ones
+
 
     14. A cat kacau the dog.
 NOTE: 1 readings, added 162 / 47 edges to chart (13 fully instantiated, 29 actives used, 10 passives used)	RAM: 450k
@@ -192,17 +265,24 @@ NOTE: transfer did 2 successful unifies and 1 failed ones
 
     16. Every cat chases a dog.
 NOTE: 1 readings, added 155 / 41 edges to chart (12 fully instantiated, 29 actives used, 9 passives used)	RAM: 400k
-NOTE: parsed 1 / 1 sentences, avg 400k, time 0.00273s
-全部 猫 追 一个 狗
-全部 猫 在 追 一个 狗
-全部 猫 追 一只 狗
-全部 猫 在 追 一只 狗
-全部 猫 追 了 一个 狗
-全部 猫 追 了 一只 狗
-NOTE: 19 passive, 114 active edges in final generation chart; built 22 passives total. [6 results]
+NOTE: parsed 1 / 1 sentences, avg 400k, time 0.00806s
+每个 猫 追 一个 狗
+每个 猫 在 追 一个 狗
+每只 猫 追 一个 狗
+每只 猫 在 追 一个 狗
+每个 猫 在 追 一只 狗
+每个 猫 追 了 一个 狗
+每只 猫 在 追 一只 狗
+每只 猫 追 了 一个 狗
+每个 猫 追 一只 狗
+每个 猫 追 了 一只 狗
+每只 猫 追 一只 狗
+每只 猫 追 了 一只 狗
+NOTE: 19 passive, 114 active edges in final generation chart; built 23 passives total. [12 results]
 
-NOTE: generated 1 / 1 sentences, avg 1114k, time 0.00541s
+NOTE: generated 1 / 1 sentences, avg 1174k, time 0.00934s
 NOTE: transfer did 2 successful unifies and 1 failed ones
+
     17. I am kacauing the cat.
 NOTE: 1 readings, added 173 / 58 edges to chart (14 fully instantiated, 31 actives used, 10 passives used)	RAM: 590k
 NOTE: parsed 1 / 1 sentences, avg 590k, time 0.00702s
