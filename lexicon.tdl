@@ -59,19 +59,19 @@ you := you-noun-lex &
 
 me := 1sg_acc-noun-lex &
   [ STEM < "me" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_me_n_1_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_I_n_1_rel" ].
 
 us := 1pl_acc-noun-lex &
   [ STEM < "us" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_us_n_1_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_we_n_1_rel" ].
 
 him := 3sg_acc-noun-lex &
   [ STEM < "him" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_him_n_1_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_he_n_1_rel" ].
 
 her := 3sg_acc-noun-lex &
   [ STEM < "her" >,
-    SYNSEM.LKEYS.KEYREL.PRED "_her_n_1_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_she_n_1_rel" ].
 
 there_n := loc_noun-noun-lex &
   [ STEM < "there" >,

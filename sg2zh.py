@@ -83,6 +83,7 @@ def read_in():
 '''
 
 pred_map = {
+    "_exist_q_rel": "exist_q_rel",
     "_dog_n_1_rel": "_dog_n_rel",
     "_cat_n_1_rel": "_cat_n_rel",
     "_glass_n_1_rel": "_glass_n_rel",
