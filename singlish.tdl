@@ -662,6 +662,19 @@ added in AUX + to the MOD feature.
                                                 VAL [ SUBJ cons,
 						      COMPS < > ] ] ] > ] ].
 
+very-adv-lex := basic-scopal-adverb-lex &
+"""
+19/4/2020
+created for new lex item
+"""
+  [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
+                             COMPS < >,
+                             SUBJ < >, 
+			     SPEC < >],
+                       POSTHEAD -,
+                       HEAD.MOD < [ LOCAL.CAT [ HEAD +jr,
+						HEAD.MOD #head ] ] > ] ].
+
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules
 ;;;;;;;;;;;;;;;;;;;

@@ -25,6 +25,10 @@ ant := common_noun-noun-lex &
   [ STEM < "ant" >,
     SYNSEM.LKEYS.KEYREL.PRED "_ant_n_1_rel" ].
 
+person := common_noun-noun-lex &
+  [ STEM < "person" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_person_n_1_rel" ].
+
 I := 1sg_nom-noun-lex &
   [ STEM < "I" >,
     SYNSEM.LKEYS.KEYREL.PRED "_I_n_1_rel" ].
@@ -293,19 +297,23 @@ every_q := singular-determiner-lex &
 
 never := never_neg-adv-lex &
   [ STEM < "never" >,
-    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "neg2_rel" ].
 
 not := not_neg-adv-lex &
   [ STEM < "not" >,
-    SYNSEM.LKEYS.KEYREL.PRED "neg_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "neg1_rel" ].
 
 already := aspect-adv-lex &
   [ STEM < "already" >,
-    SYNSEM.LKEYS.KEYREL.PRED "already_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_already_a_rel" ].
 
 agak := agak-adv-lex &
   [ STEM < "agak" >,
-    SYNSEM.LKEYS.KEYREL.PRED "roughly_rel" ].
+    SYNSEM.LKEYS.KEYREL.PRED "_roughly_a_rel" ].
+
+very := very-adv-lex &
+  [ STEM < "very" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_very_a_rel" ].
 
 and1 := conj-lex &
   [ STEM < "and" >,
