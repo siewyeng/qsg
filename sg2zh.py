@@ -96,7 +96,7 @@ pred_map = {
     "_you_n_1_rel": "_you_n_rel",
     "_they_n_1_rel": "_they_n_rel",
     "_we_n_1_rel": "_we_n_rel",
-    "_person_n_1_rel": "_person_n_rel":,
+    "_person_n_1_rel": "_person_n_rel",
     # "_Xiaoming_n_rel": "",
     # "_there_n_rel": "_there_n_rel",
     # "_cute_a_rel": "_cute_a_rel",
@@ -141,9 +141,11 @@ def read_in():
             lines[i] = lines[i].replace(k, v)
 
     return lines
+
 def main():
     lines = read_in()
-    print lines
+    for l in lines:
+        print(l)
 
 if __name__ == '__main__':
     main()
