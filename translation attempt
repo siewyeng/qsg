@@ -1,0 +1,254 @@
+Parses for sg2zh
+
+1. he does eat the cat
+NOTE: 1 readings, added 165 / 50 edges to chart (13 fully instantiated, 31 actives used, 10 passives used)	RAM: 497k
+NOTE: parsed 1 / 1 sentences, avg 497k, time 0.01863s
+atomic_dg: no such type as `no_aspect'
+NOTE: transfer did 0 successful unifies and 0 failed ones
+
+2. happy dogs are singing
+NOTE: 1 readings, added 157 / 70 edges to chart (14 fully instantiated, 32 actives used, 10 passives used)	RAM: 696k
+NOTE: parsed 1 / 1 sentences, avg 696k, time 0.01387s
+WARNING: illformed input MRS
+NOTE: 0 passive, 0 active edges in final generation chart; built 671545000 passives total. [0 results]
+
+NOTE: generated 0 / 1 sentences, avg 4k, time 0.00045s
+NOTE: transfer did 0 successful unifies and 0 failed ones
+
+3. I ask if he happy
+NOTE: 1 readings, added 180 / 63 edges to chart (15 fully instantiated, 33 actives used, 12 passives used)	RAM: 650k
+NOTE: parsed 1 / 1 sentences, avg 650k, time 0.01254s
+NOTE: 8 passive, 66 active edges in final generation chart; built 8 passives total. [0 results]
+
+NOTE: generated 0 / 1 sentences, avg 465k, time 0.00558s
+NOTE: transfer did 3 successful unifies and 1 failed ones
+
+4. the cat and the tree chase me.
+NOTE: 1 readings, added 290 / 118 edges to chart (29 fully instantiated, 54 actives used, 22 passives used)	RAM: 1042k
+NOTE: parsed 1 / 1 sentences, avg 1042k, time 0.01814s
+猫 和 树 追 我
+猫 和 树 追 我
+猫 和 树 在 追 我
+猫 和 树 追 了 我
+猫 和 树 在 追 我
+猫 和 树 追 了 我
+NOTE: 58 passive, 207 active edges in final generation chart; built 67 passives total. [6 results]
+
+5. He can tekan me already.
+NOTE: 1 readings, added 198 / 83 edges to chart (15 fully instantiated, 40 actives used, 12 passives used)	RAM: 776k
+NOTE: parsed 1 / 1 sentences, avg 776k, time 0.01615s
+atomic_dg: no such type as `perfect'
+NOTE: transfer did 0 successful unifies and 0 failed ones
+; to change aspect name!
+
+6. I never eat the cat.
+NOTE: 1 readings, added 155 / 40 edges to chart (12 fully instantiated, 26 actives used, 10 passives used)	RAM: 404k
+NOTE: parsed 1 / 1 sentences, avg 404k, time 0.00653s
+我 不 吃 了 猫
+我 不 吃 了 猫 吗
+我 不 在 吃 猫
+我 不 在 吃 猫 吗
+我 不 吃 猫
+我 不 吃 猫 吗
+NOTE: 41 passive, 245 active edges in final generation chart; built 54 passives total. [6 results]
+
+NOTE: generated 1 / 1 sentences, avg 2439k, time 0.00872s
+NOTE: transfer did 3 successful unifies and 0 failed ones
+; should I specidy the aspect and prop-or-ques
+
+    7. There got a cat and a dog.
+NOTE: 1 readings, added 274 / 102 edges to chart (26 fully instantiated, 54 actives used, 21 passives used)	RAM: 927k
+NOTE: parsed 1 / 1 sentences, avg 927k, time 0.00863s
+那里 有 一个 猫 和 一个 狗
+那里 有 了 一个 猫 和 一个 狗
+那里 在 有 一个 猫 和 一个 狗
+那里 有 了 一只 猫 和 一个 狗
+那里 在 有 一只 猫 和 一个 狗
+那里 有 了 一个 猫 和 一只 狗
+那里 在 有 一个 猫 和 一只 狗
+那里 有 了 一只 猫 和 一只 狗
+那里 在 有 一只 猫 和 一只 狗
+那里 有 一个 猫 和 一个 狗
+那里 在 有 一个 猫 和 一个 狗
+那里 有 一只 猫 和 一个 狗
+那里 在 有 一只 猫 和 一个 狗
+那里 有 一个 猫 和 一只 狗
+那里 在 有 一个 猫 和 一只 狗
+那里 有 一只 猫 和 一只 狗
+那里 在 有 一只 猫 和 一只 狗
+那里 有 了 一个 猫 和 一个 狗
+那里 有 一只 猫 和 一个 狗
+那里 有 了 一只 猫 和 一个 狗
+那里 有 一个 猫 和 一只 狗
+那里 有 了 一个 猫 和 一只 狗
+那里 有 一只 猫 和 一只 狗
+那里 有 了 一只 猫 和 一只 狗
+NOTE: 80 passive, 277 active edges in final generation chart; built 97 passives total. [24 results]
+
+NOTE: generated 1 / 1 sentences, avg 3016k, time 0.01112s
+NOTE: transfer did 2 successful unifies and 2 failed ones
+
+    8. Ants are big and dogs are cute.
+NOTE: 1 readings, added 274 / 102 edges to chart (26 fully instantiated, 54 actives used, 21 passives used)	RAM: 927k
+NOTE: parsed 1 / 1 sentences, avg 927k, time 0.00863s
+那里 有 一个 猫 和 一个 狗
+那里 有 了 一个 猫 和 一个 狗
+那里 在 有 一个 猫 和 一个 狗
+那里 有 了 一只 猫 和 一个 狗
+那里 在 有 一只 猫 和 一个 狗
+那里 有 了 一个 猫 和 一只 狗
+那里 在 有 一个 猫 和 一只 狗
+那里 有 了 一只 猫 和 一只 狗
+那里 在 有 一只 猫 和 一只 狗
+那里 有 一个 猫 和 一个 狗
+那里 在 有 一个 猫 和 一个 狗
+那里 有 一只 猫 和 一个 狗
+那里 在 有 一只 猫 和 一个 狗
+那里 有 一个 猫 和 一只 狗
+那里 在 有 一个 猫 和 一只 狗
+那里 有 一只 猫 和 一只 狗
+那里 在 有 一只 猫 和 一只 狗
+那里 有 了 一个 猫 和 一个 狗
+那里 有 一只 猫 和 一个 狗
+那里 有 了 一只 猫 和 一个 狗
+那里 有 一个 猫 和 一只 狗
+那里 有 了 一个 猫 和 一只 狗
+那里 有 一只 猫 和 一只 狗
+那里 有 了 一只 猫 和 一只 狗
+NOTE: 80 passive, 277 active edges in final generation chart; built 97 passives total. [24 results]
+
+NOTE: generated 1 / 1 sentences, avg 3016k, time 0.01112s
+NOTE: transfer did 2 successful unifies and 2 failed ones
+
+    9. I already got everything.
+NOTE: 1 readings, added 121 / 34 edges to chart (9 fully instantiated, 21 actives used, 8 passives used)	RAM: 344k
+NOTE: parsed 1 / 1 sentences, avg 344k, time 0.01183s
+atomic_dg: no such type as `perfect'
+NOTE: transfer did 0 successful unifies and 0 failed ones
+
+; after changing 'perfect' to 'perfective'
+NOTE: 1 readings, added 121 / 34 edges to chart (9 fully instantiated, 21 actives used, 8 passives used)	RAM: 344k
+NOTE: parsed 1 / 1 sentences, avg 344k, time 0.00988s
+我 已经 有 了 每个
+我 已经 有 每个 东西
+我 已经 有 了 每个 东西
+我 已经 有 每只 东西
+我 已经 有 每个
+我 已经 有 了 每只 东西
+我 已经 有 了 每个 吗
+我 已经 有 每个 东西 吗
+我 已经 有 了 每个 东西 吗
+我 已经 有 每只 东西 吗
+我 已经 有 每个 吗
+我 已经 有 了 每只 东西 吗
+NOTE: 34 passive, 189 active edges in final generation chart; built 45 passives total. [12 results]
+
+NOTE: generated 1 / 1 sentences, avg 2131k, time 0.01140s
+NOTE: transfer did 3 successful unifies and 0 failed ones
+
+
+    10. Is that cute.
+NOTE: 1 readings, added 127 / 64 edges to chart (16 fully instantiated, 18 actives used, 11 passives used)	RAM: 625k
+NOTE: parsed 1 / 1 sentences, avg 625k, time 0.01632s
+NOTE: 8 passive, 53 active edges in final generation chart; built 9 passives total. [0 results]
+
+NOTE: generated 0 / 1 sentences, avg 372k, time 0.00506s
+NOTE: transfer did 3 successful unifies and 0 failed ones
+;inversion is not translated
+
+    11. The tree think he agak can sing.
+NOTE: 1 readings, added 290 / 118 edges to chart (23 fully instantiated, 54 actives used, 20 passives used)	RAM: 1101k
+NOTE: parsed 1 / 1 sentences, avg 1101k, time 0.01321s
+atomic_dg: no such type as `no_aspect'
+NOTE: transfer did 0 successful unifies and 0 failed ones
+
+    12. The glass does hurt the tree.
+NOTE: 1 readings, added 205 / 62 edges to chart (16 fully instantiated, 38 actives used, 12 passives used)	RAM: 599k
+NOTE: parsed 1 / 1 sentences, avg 599k, time 0.00886s
+atomic_dg: no such type as `no_aspect'
+NOTE: transfer did 0 successful unifies and 0 failed ones
+
+    13. Those ants think that she will sleep.
+NOTE: 1 readings, added 310 / 136 edges to chart (26 fully instantiated, 58 actives used, 23 passives used)	RAM: 1274k
+NOTE: parsed 1 / 1 sentences, avg 1274k, time 0.01692s
+atomic_dg: no such type as `no_aspect'
+NOTE: transfer did 0 successful unifies and 0 failed ones
+
+    14. A cat kacau the dog.
+NOTE: 1 readings, added 162 / 47 edges to chart (13 fully instantiated, 29 actives used, 10 passives used)	RAM: 450k
+NOTE: parsed 1 / 1 sentences, avg 450k, time 0.01041s
+一个 猫 打扰 狗
+一个 猫 在 打扰 狗
+一只 猫 打扰 狗
+一只 猫 在 打扰 狗
+一个 猫 打扰 了 狗
+一只 猫 打扰 了 狗
+NOTE: 27 passive, 170 active edges in final generation chart; built 35 passives total. [6 results]
+
+NOTE: generated 1 / 1 sentences, avg 1580k, time 0.01592s
+NOTE: transfer did 2 successful unifies and 1 failed ones
+
+    15. Everything very big.
+
+    16. Every cat chases a dog.
+NOTE: 1 readings, added 155 / 41 edges to chart (12 fully instantiated, 29 actives used, 9 passives used)	RAM: 400k
+NOTE: parsed 1 / 1 sentences, avg 400k, time 0.00273s
+全部 猫 追 一个 狗
+全部 猫 在 追 一个 狗
+全部 猫 追 一只 狗
+全部 猫 在 追 一只 狗
+全部 猫 追 了 一个 狗
+全部 猫 追 了 一只 狗
+NOTE: 19 passive, 114 active edges in final generation chart; built 22 passives total. [6 results]
+
+NOTE: generated 1 / 1 sentences, avg 1114k, time 0.00541s
+NOTE: transfer did 2 successful unifies and 1 failed ones
+    17. I am kacauing the cat.
+NOTE: 1 readings, added 173 / 58 edges to chart (14 fully instantiated, 31 actives used, 10 passives used)	RAM: 590k
+NOTE: parsed 1 / 1 sentences, avg 590k, time 0.00702s
+WARNING: illformed input MRS
+NOTE: 0 passive, 0 active edges in final generation chart; built -936392356 passives total. [0 results]
+
+NOTE: generated 0 / 1 sentences, avg 5k, time 0.00048s
+NOTE: transfer did 0 successful unifies and 0 failed ones
+
+    18. I want to give you a tree.
+NOTE: 1 readings, added 354 / 182 edges to chart (33 fully instantiated, 53 actives used, 27 passives used)	RAM: 1604k
+NOTE: parsed 1 / 1 sentences, avg 1604k, time 0.02053s
+atomic_dg: no such type as `no_aspect'
+NOTE: transfer did 0 successful unifies and 0 failed ones
+;but give sentences dont work in general anyway
+
+    19. She ask me if he sleeps.
+NOTE: 1 readings, added 234 / 91 edges to chart (17 fully instantiated, 44 actives used, 15 passives used)	RAM: 873k
+NOTE: parsed 1 / 1 sentences, avg 873k, time 0.01774s
+她 问 我 他 在 睡觉 吗
+她 在 问 我 他 在 睡觉 吗
+她 问 我 他 睡觉 吗
+她 问 了 我 他 在 睡觉 吗
+她 问 了 我 他 睡觉 吗
+她 在 问 我 他 睡觉 吗
+她 问 了 我 他 睡觉 了 吗
+她 在 问 我 他 睡觉 了 吗
+她 问 我 他 睡觉 了 吗
+NOTE: 91 passive, 660 active edges in final generation chart; built 158 passives total. [9 results]
+
+NOTE: generated 1 / 1 sentences, avg 5930k, time 0.02519s
+NOTE: transfer did 3 successful unifies and 1 failed ones
+
+    20. is it he eat this.
+NOTE: 1 readings, added 211 / 93 edges to chart (18 fully instantiated, 38 actives used, 14 passives used)	RAM: 889k
+NOTE: parsed 1 / 1 sentences, avg 889k, time 0.01321s
+他 吃 这只 东西
+他 吃 这只 东西 吗
+他 在 吃 这只 东西
+他 吃 了 这只 东西
+他 在 吃 这只 东西 吗
+他 吃 了 这只 东西 吗
+NOTE: 36 passive, 214 active edges in final generation chart; built 45 passives total. [6 results]
+
+NOTE: generated 1 / 1 sentences, avg 2149k, time 0.03241s
+NOTE: transfer did 3 successful unifies and 0 failed ones
+
+    
+

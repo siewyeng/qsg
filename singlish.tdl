@@ -87,7 +87,7 @@ past := tense.
 
 ;;; Aspect
 
-perfect := aspect.
+perfective := aspect.
 experiential := aspect.
 no_aspect := aspect.
 
@@ -633,7 +633,7 @@ specified the FORM of the modified to be base but the sentence cannot parse afte
 removed the AUX - to allow for 'he can sleep already' for already to MOD 'can sleep'
 added in the empty COMPS in the MOD
 """
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT perfect,
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT perfective,
 		   CAT [ VAL [ SPR < >,
                                COMPS < >,
                                SUBJ < >, 

@@ -45,11 +45,11 @@ Test sentences:
     13. Those ants think that she will sleep.
     14. A cat kacau the dog.
     15. Everything is big.
-    16. Every cat gives me a dog.
+    16. Every cat chases a dog.
     17. I am kacauing the cat.
     18. I want to give you a tree.
     19. She ask me if he sleeps.
-    20. is it he give you this.
+    20. is it he eat this.
     
 
 
@@ -121,6 +121,7 @@ pred_map = {
     "_can_v_1_rel": "_can_v_rel",
     "_can_v_2_rel": "_can_v_rel",
     "_roughly_a_rel": "_roughly_v_rel",
+    "_already_a_rel": "_already_v_rel",
     # "_will_v_rel": "_will_v_rel",
     "neg2_rel": "neg_rel",
     "neg1_rel": "_not_v_rel",
