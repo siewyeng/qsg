@@ -5,6 +5,10 @@ dog := common_noun-noun-lex &
   [ STEM < "dog" >,
     SYNSEM.LKEYS.KEYREL.PRED "_dog_n_1_rel" ].
 
+animal := common_noun-noun-lex &
+  [ STEM < "animal" >,
+    SYNSEM.LKEYS.KEYREL.PRED "_animal_n_1_rel" ].
+
 cat := common_noun-noun-lex &
   [ STEM < "cat" >,
     SYNSEM.LKEYS.KEYREL.PRED "_cat_n_1_rel" ].

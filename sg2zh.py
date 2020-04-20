@@ -31,7 +31,7 @@ Test sentences:
 
     (Singlish)
     1. He does eat the cat
-    2. Happy dogs are singing --> ill-formed input mrs
+    2. Happy dogs are singing
     3. White ant want a big dog.
     ;changed from i ask if he happy because 'he happy" cannot be translated like that
     4. The cat and the tree chase me.
@@ -99,6 +99,7 @@ pred_map = {
     "_they_n_1_rel": "_they_n_rel",
     "_we_n_1_rel": "_we_n_rel",
     "_person_n_1_rel": "_person_n_rel",
+    "_animal_n_1_rel": "_animal_n_rel",
     # "_Xiaoming_n_rel": "",
     # "_there_n_rel": "_there_n_rel",
     # "_cute_a_rel": "_cute_a_rel",
