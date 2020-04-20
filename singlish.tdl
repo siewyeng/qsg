@@ -651,14 +651,19 @@ agak-adv-lex := basic-scopal-adverb-lex &
 15/4/2020
 created new lex type for the adv agak
 added in AUX + to the MOD feature.
+
+20/4/2020
+removed AUX + to allow for "agak know"
+the semantics of the meaning will be what constraints which verbs can be MOD
+and this grammar will not constraint it
 """
   [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
                              COMPS < >,
                              SUBJ < >, 
 			     SPEC < >],
                        POSTHEAD -,
-                       HEAD.MOD < [ LOCAL.CAT [ HEAD verb &
-						     [AUX + ],
+                       HEAD.MOD < [ LOCAL.CAT [ HEAD verb,
+; &						     [AUX + ],
                                                 VAL [ SUBJ cons,
 						      COMPS < > ] ] ] > ] ].
 
