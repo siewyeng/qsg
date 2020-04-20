@@ -39,8 +39,9 @@ basic-head-comp-phrase :+ [ SYNSEM.LOCAL.CAT.MC #mc,
 basic-head-opt-subj-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
 
 ; For the analysis of inverted yes-no questions, we add the feature INV.
-
-verb :+ [ INV bool ].
+; NONINFL added for words like "got"
+verb :+ [ INV bool,
+	  NONINFL bool ].
 
 ;;;;;;;;;;;;;;
 ;;; Features
@@ -258,21 +259,26 @@ nom-intransitive-verb-lex := intransitive-verb-lex &
   [ ARG-ST.FIRST.LOCAL.CAT.HEAD noun &
                                 [ CASE nom ] ].
 
-nom-acc-transitive-verb-lex := transitive-verb-lex &
-  [ ARG-ST < [ LOCAL.CAT.HEAD noun &
+; get-trans is non inflectional and is LOC underspecified which allows it to have "there" as a subj
+get_tr-verb-lex := transitive-verb-lex &
+  [ SYNSEM.LOCAL.CAT.HEAD.NONINFL +,
+    ARG-ST < [ LOCAL.CAT.HEAD noun &
                               [ CASE nom ] ],
              [ LOCAL.CAT.HEAD noun &
                               [ CASE acc ] ] > ].
 
 ;general transitive verb lex added for most verbs which cannot take "there_n" as a subject
-gentr_verb-verb-lex := nom-acc-transitive-verb-lex &
-  [ ARG-ST < [ LOCAL.CAT.HEAD.LOC - ],
-	     #object > ].
+gen_tr-verb-lex := transitive-verb-lex &
+  [ ARG-ST < [ LOCAL.CAT.HEAD noun &
+                              [ CASE nom,
+				LOC - ] ],
+             [ LOCAL.CAT.HEAD noun &
+                              [ CASE acc ] ] > ].
 
 intransitive_verb-verb-lex := intransitive-verb-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.FORM form ].
 
-ditransitive_verb-verb-lex := ditransitive-verb-lex &
+ditr-verb-lex := ditransitive-verb-lex &
 """
 5/4/2020
 added in PRON - for the second complement
@@ -709,7 +715,8 @@ fin-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
 
 added in 'HEAD.FORM finite' to the 3sg-lex-rule so that when it is non finite (eg. with Vaux), the verb will not undergo this rule 
 """ 
-  [ SYNSEM.LOCAL.CAT [HEAD.FORM finite,
+  [ SYNSEM.LOCAL.CAT [HEAD [ NONINFL -,
+			     FORM finite ],
                       VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ]].
 
@@ -725,7 +732,8 @@ base-lex-rule := const-lex-rule & nonfin-lex-rule-super &
 
 prp-lex-rule := infl-lex-rule & nonfin-lex-rule-super &
   [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT imperfective,
-                   CAT.HEAD.FORM prp ] ].
+                   CAT.HEAD [ NONINFL -,
+			      FORM prp ] ] ].
 
 ; Rule for inverted subject verb order in questions.
 ; The incompatible SUBJ values on SYNSEM and DTR are

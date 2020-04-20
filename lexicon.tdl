@@ -115,35 +115,35 @@ white_pred := pred-adj-lex &
 
 ;;; Verbs
 
-want := gentr_verb-verb-lex &
+want := gen_tr-verb-lex &
   [ STEM < "want" >,
     SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
 
-got_v := nom-acc-transitive-verb-lex  &
+got_v := get_tr-verb-lex  &
   [ STEM < "got" >,
     SYNSEM.LKEYS.KEYREL.PRED "_have_v_rel" ].
 
-tekan := gentr_verb-verb-lex &
+tekan := gen_tr-verb-lex &
   [ STEM < "tekan" >,
     SYNSEM.LKEYS.KEYREL.PRED "_bully_v_rel" ].
 
-kacau := gentr_verb-verb-lex &
+kacau := gen_tr-verb-lex &
   [ STEM < "kacau" >,
     SYNSEM.LKEYS.KEYREL.PRED "_disturb_v_rel" ].
 
-chase := gentr_verb-verb-lex &
+chase := gen_tr-verb-lex &
   [ STEM < "chase" >,
     SYNSEM.LKEYS.KEYREL.PRED "_chase_v_rel" ].
 
-eat := gentr_verb-verb-lex &
+eat := gen_tr-verb-lex &
   [ STEM < "eat" >,
     SYNSEM.LKEYS.KEYREL.PRED "_eat_v_rel" ].
 
-hurt := gentr_verb-verb-lex &
+hurt := gen_tr-verb-lex &
   [ STEM < "hurt" >,
     SYNSEM.LKEYS.KEYREL.PRED "_hurt_v_rel" ].
 
-give := ditransitive_verb-verb-lex &
+give := ditr-verb-lex &
   [ STEM < "give" >,
     SYNSEM.LKEYS.KEYREL.PRED "_give_v_rel" ].
 
