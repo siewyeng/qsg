@@ -88,7 +88,7 @@ past := tense.
 ;;; Aspect
 
 perfective := aspect.
-experiential := aspect.
+imperfective := aspect.
 no_aspect := aspect.
 
 
@@ -724,7 +724,7 @@ base-lex-rule := const-lex-rule & nonfin-lex-rule-super &
   [ SYNSEM.LOCAL.CAT.HEAD.FORM base ].
 
 prp-lex-rule := infl-lex-rule & nonfin-lex-rule-super &
-  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT experiential,
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.E.ASPECT imperfective,
                    CAT.HEAD.FORM prp ] ].
 
 ; Rule for inverted subject verb order in questions.
