@@ -24,6 +24,17 @@ NOTE: 0 passive, 0 active edges in final generation chart; built 671545000 passi
 NOTE: generated 0 / 1 sentences, avg 4k, time 0.00045s
 NOTE: transfer did 0 successful unifies and 0 failed ones
 
+;after changing aspect name from experiential to imperfective
+
+NOTE: 1 readings, added 157 / 70 edges to chart (14 fully instantiated, 32 actives used, 10 passives used)	RAM: 698k
+NOTE: parsed 1 / 1 sentences, avg 698k, time 0.01852s
+高兴 狗 在 唱歌
+高兴 狗 唱歌
+NOTE: 16 passive, 104 active edges in final generation chart; built 16 passives total. [2 results]
+
+NOTE: generated 1 / 1 sentences, avg 876k, time 0.00453s
+NOTE: transfer did 3 successful unifies and 0 failed ones
+
 3. I ask if he happy
 NOTE: 1 readings, added 180 / 63 edges to chart (15 fully instantiated, 33 actives used, 12 passives used)	RAM: 650k
 NOTE: parsed 1 / 1 sentences, avg 650k, time 0.01254s
@@ -291,6 +302,16 @@ NOTE: 0 passive, 0 active edges in final generation chart; built -936392356 pass
 
 NOTE: generated 0 / 1 sentences, avg 5k, time 0.00048s
 NOTE: transfer did 0 successful unifies and 0 failed ones
+
+;after changing experiential to imperfective aspect
+NOTE: 1 readings, added 173 / 58 edges to chart (14 fully instantiated, 31 actives used, 10 passives used)	RAM: 593k
+NOTE: parsed 1 / 1 sentences, avg 593k, time 0.01444s
+我 打扰 猫
+我 在 打扰 猫
+NOTE: 20 passive, 136 active edges in final generation chart; built 22 passives total. [2 results]
+
+NOTE: generated 1 / 1 sentences, avg 1141k, time 0.00725s
+NOTE: transfer did 1 successful unifies and 2 failed ones
 
     18. I want to give you a tree.
 NOTE: 1 readings, added 354 / 182 edges to chart (33 fully instantiated, 53 actives used, 27 passives used)	RAM: 1604k

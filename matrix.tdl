@@ -2456,7 +2456,6 @@ no-ltop-lex-item := lex-item &
 ; as attributive and predicative become tricky.  Attributive adjectives
 ; and PPs should be raise-index-mod-lex-item, while predicative
 ; ones should be norm-hook-lex-item. But how to relate the two?
-; Also, reconsider whether I want to do this for intersective as
 ; well as scopal modifiers, or just the scopal guys.
 
 ; TJT 2014-04-24 raise-index-mod-lex-item should not be used for

@@ -58,8 +58,8 @@ E.TENSE : E.TENSE
   * <> *
 
 E.ASPECT : E.ASPECT
-  perfect <> perfect
-  experiential <> experiential
+  perfective <> perfective
+  imperfective <> imperfective
   no_aspect >> *
   no_aspect << *
   * <> *

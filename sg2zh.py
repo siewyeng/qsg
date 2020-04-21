@@ -45,13 +45,14 @@ Test sentences:
     12. The glass does hurt the tree.
     13. Those ants think that she will sleep. *over generation from "will"
     14. A cat kacau the dog.
-    15. Everything is big.
+    15. Everything very big. --> :(
     16. Every cat chases a dog.
-    17. I am kacauing the cat. --> ill-formed input mrs
+    17. I am kacauing the cat.
     18. I want to give you a tree. *over generation from "give"
     19. She ask me if he sleeps.
     20. is it he eat this.
-    
+    21. She wants a tree is it.
+    22. Everything hurts me.
 
 
 """
