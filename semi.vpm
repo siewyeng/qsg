@@ -54,12 +54,14 @@ PNG.GEND : PNG.GEND
 E.TENSE : E.TENSE
   nonpast <> nonpast
   past <> past
+  nonpast << *
   * <> *
 
 E.ASPECT : E.ASPECT
   perfect <> perfect
   experiential <> experiential
   no_aspect >> *
+  no_aspect << *
   * <> *
 
 E.MOOD : E.MOOD
