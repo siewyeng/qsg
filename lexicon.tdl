@@ -123,7 +123,7 @@ want := gen_tr-verb-lex &
   [ STEM < "want" >,
     SYNSEM.LKEYS.KEYREL.PRED "_want_v_rel" ].
 
-got_v := get_tr-verb-lex  &
+got_v := got_tr-verb-lex  &
   [ STEM < "got" >,
     SYNSEM.LKEYS.KEYREL.PRED "_have_v_rel" ].
 
@@ -199,6 +199,11 @@ does := does_subj-raise-aux-no-pred &
   [ STEM < "does" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ].
+
+cannot := will-aux-lex &
+  [ STEM < "cannot" >,
+    SYNSEM.LKEYS.ALTKEYREL.PRED "_can_v_rel",
+    SYNSEM.LKEYS.KEYREL.PRED "neg2_rel" ].
 
 can := will-aux-lex &
   [ STEM < "can" >,
@@ -331,7 +336,7 @@ and2 := conj-lex &
 
 ;;; Complementizers
 
-is%20it := qpart-lex-item &
+is+it := qpart-lex-item &
   [ STEM < "is",
            "it" > ].
 

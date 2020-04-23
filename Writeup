@@ -250,7 +250,11 @@ Thus, maybe the comps of "think" cannot be a question.
 Introduced a new verb feature called NONINFL where the only thing that is noninfl + so far is "got". This prevents constructions like "he gots cats"
 --> why is MA generated for some propositions but not others. eg. he can eat the cat vs. he can eat the cat already
 
+I need to do something about "to" where "is it" is. the update would allow "to" to be generated. eg. I want sing, i want to sing. The addition must also prevent "to" joining with a phrase that is already headed by "to".
+
 The grammar parsed sentences like "that cat sleeps" as a subj-head sentence or as a complementizer phrase which is not desired. In order to stop this, c (for complement) was initially removed from the root such that it has a HEAD of +vj. However, this prevented "is it" sentences from parsing as they are headed by that complementizer. Thus, the change was then reverted. Instead, that_comp was given an MC -. and thus, a CP headed by "that" cannot be a root.
+
+coordination and copulas could not translate before the lesson. But can now because of a new trigger rules for hen --> need to create similar rules for copulas. This was because since the copula did not introduce a predicate, it was not generated. In the Mandarin grammar, the new trigger rule was made to insert the word "hen" when there was ("~_a_").
 
 is it the cat want to sing (okay)
 the cat want to sing is it (over-generates)

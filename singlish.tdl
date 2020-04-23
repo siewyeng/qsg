@@ -259,8 +259,8 @@ nom-intransitive-verb-lex := intransitive-verb-lex &
   [ ARG-ST.FIRST.LOCAL.CAT.HEAD noun &
                                 [ CASE nom ] ].
 
-; get-trans is non inflectional and is LOC underspecified which allows it to have "there" as a subj
-get_tr-verb-lex := transitive-verb-lex &
+; got-trans is non inflectional and is LOC underspecified which allows it to have "there" as a subj
+got_tr-verb-lex := transitive-verb-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.NONINFL +,
     ARG-ST < [ LOCAL.CAT.HEAD noun &
                               [ CASE nom ] ],
@@ -489,9 +489,13 @@ This has an empty MOD list such that '[the cat][cute]' cannot be a Head-mod phra
 
 added in VAL.SPR < >, to ensure that the subj has to be an NP
 prevent multiple parses for sentences like "he cute"
+
+22/4/2020
+added in CASE nom
 """
     [ SYNSEM.LOCAL.CAT.HEAD.MOD < >, 
-      SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL [CAT [HEAD noun,
+      SYNSEM.LOCAL.CAT.VAL.SUBJ < [LOCAL [CAT [HEAD noun &
+						    [ CASE nom ],
                                                VAL.SPR < > ], 
                                   	  CONT.HOOK.INDEX #ind ] ] >,
       SYNSEM.LKEYS.KEYREL.ARG1 #ind
