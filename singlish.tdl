@@ -303,8 +303,7 @@ the empty list did not allow for constructions like "i think he cute"
     ARG-ST < [ LOCAL.CAT.HEAD noun &
 			      [ LOC - ]],
              #clause &
-             [ LOCAL.CAT.VAL [ SPR 0-1-list,
-                               COMPS < >,
+             [ LOCAL.CAT.VAL [ COMPS < >,
                                SUBJ < > ] ] > ].
 
 ditr-clausal-verb-lex := main-verb-lex &
@@ -955,7 +954,11 @@ added in SF prop to prevent constructions with "think if ..."
                            SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].
 
 int_tr-comp-verb-lex := clausal-verb-lex & clausal-second-arg-trans-lex-item &
-  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL [ CAT.HEAD +vjc,
+"""
+24/4/2020
+added changed CAT.HEAD +vjc to comp so that "she ask he sleep" is not permitted
+"""
+  [ SYNSEM.LOCAL.CAT.VAL [ COMPS < [ LOCAL [ CAT.HEAD comp,
 					     CONT.HOOK.INDEX.SF ques ] ] >,
                            SUBJ < [ LOCAL.CAT.HEAD.CASE nom ] > ] ].
 
