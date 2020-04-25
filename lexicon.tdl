@@ -205,12 +205,12 @@ do := does_subj-raise-aux-no-pred &
   [ STEM < "do" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.FORM non_3sg ].
 
-cannot := will-aux-lex &
+cannot := can-aux-lex &
   [ STEM < "cannot" >,
     SYNSEM.LKEYS.ALTKEYREL.PRED "_can_v_rel",
     SYNSEM.LKEYS.KEYREL.PRED "neg2_rel" ].
 
-can := will-aux-lex &
+can := can-aux-lex &
   [ STEM < "can" >,
     SYNSEM.LKEYS.KEYREL.PRED "_can_v_rel" ].
 

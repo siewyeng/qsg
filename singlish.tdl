@@ -40,8 +40,11 @@ basic-head-opt-subj-phrase :+ [ HEAD-DTR.SYNSEM.LOCAL.CAT.VAL.COMPS < > ].
 
 ; For the analysis of inverted yes-no questions, we add the feature INV.
 ; NONINFL added for words like "got"
+; CAN added for "can" to prevent "can not"
 verb :+ [ INV bool,
-	  NONINFL bool ].
+	  NONINFL bool,
+	  CAN bool ].
+
 
 ;;;;;;;;;;;;;;
 ;;; Features
@@ -395,17 +398,25 @@ added in the aspect value for the COMPS
   [ SYNSEM.LOCAL.CAT.VAL [ COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
 		 			       CONT.HOOK.INDEX.E.ASPECT no_aspect ] ] ].
 
-;can-aux-lex := subj-raise-aux-with-pred &
-;"""
-;16/4/2020
-;added in the aspect such that can will not take a COMPS that has been modified by 'already'
-;
-;24/4/2020
-;I think 'there' cannot function as the subject of a 'can' sentence so this type has been made  
-;obsolete for now.
-;"""
+can-aux-lex := subj-raise-aux-with-pred &
+"""
+16/4/2020
+added in the aspect such that can will not take a COMPS that has been modified by 'already'
+
+24/4/2020
+I think 'there' cannot function as the subject of a 'can' sentence so this type has been made  
+obsolete for now.
+
+25/4/2020
+can-aux-lex revived to prevent 'not' from modifying 'can'
+"""
 ;  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
 ;		 			     CONT.HOOK.INDEX.E.ASPECT no_aspect ] ].
+  [ SYNSEM.LOCAL.CAT [ HEAD.CAN +,
+		       VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
+		 			       CONT.HOOK.INDEX.E.ASPECT no_aspect ] ],
+    ARG-ST < [ LOCAL.CAT.HEAD.LOC - ],
+	     #comps > ].
 
 will-aux-lex := subj-raise-aux-with-pred &
 """
@@ -629,6 +640,9 @@ but is unable to modify adj
 
 15/4/2020
 added in a non-empty comps list in order to prevent 'it does hurt me not'
+
+25/4/2020
+added in CAN - to prevent 'it can not hurt me'
 """
   [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
                              COMPS < >,
@@ -636,7 +650,8 @@ added in a non-empty comps list in order to prevent 'it does hurt me not'
 			     SPEC < >],
                        POSTHEAD +,
                        HEAD.MOD < [ LOCAL.CAT [ HEAD verb &
-						     [AUX + ],
+						     [ AUX +,
+						       CAN - ],
                                                 VAL [ SUBJ cons,
 						      COMPS < #comps > ] ] ] > ] ].
 
