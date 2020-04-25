@@ -197,8 +197,13 @@ will := will-aux-lex &
 
 does := does_subj-raise-aux-no-pred &
   [ STEM < "does" >,
-    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
-                                                                PER 3rd ] ].
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL [ CONT.HOOK.INDEX.PNG [ NUM singular,
+                                                                  PER 3rd ],
+					    CAT.HEAD.FORM 3sg ] ].
+
+do := does_subj-raise-aux-no-pred &
+  [ STEM < "do" >,
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CAT.HEAD.FORM non_3sg ].
 
 cannot := will-aux-lex &
   [ STEM < "cannot" >,
@@ -213,6 +218,8 @@ is_aux := prp_subj-raise-aux-no-pred &
   [ STEM < "is" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ].
+; 25/4/2020 the introduction of FORM 3sg helps make the grammar simpler
+; 'are' still does not account for 2sg
 are_aux := prp_subj-raise-aux-no-pred &
   [ STEM < "are" >,
     SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
@@ -234,17 +241,20 @@ to := to-infinitive-lex &
 
 is_cop := be-cop-lex &
   [ STEM < "is" >,
-    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
-                                                                PER 3rd ] ].
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL [ CAT.HEAD.FORM 3sg,
+					    CONT.HOOK.INDEX.PNG [ NUM singular,
+                                                                  PER 3rd ] ] ].
 
 are_cop := be-cop-lex &
   [ STEM < "are" >,
-    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL [ CAT.HEAD.FORM non_3sg,
+					    CONT.HOOK.INDEX.PNG.NUM plural ] ].
 
 am_cop := be-cop-lex &
   [ STEM < "am" >,
-    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
-                                                                PER 1st ] ].
+    SYNSEM.LOCAL.CAT.VAL.SUBJ.FIRST.LOCAL [ CAT.HEAD.FORM non_3sg,
+					    CONT.HOOK.INDEX.PNG [ NUM singular,
+                                                                  PER 1st ] ] ].
 
 ;;; Determiners and their nouns
 

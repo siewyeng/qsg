@@ -147,28 +147,30 @@ added in the COUNT + value in contrast with the newly added mass_noun-noun-lex
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
 				       COUNT + ] ].
 
+; 25/4/2020 3sg and non_3sg FORM values included for verb inflection for "does"
 mass_noun-noun-lex := noun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG [ PER 3rd,
-				       NUM singular,
-				       COUNT - ] ].
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.PNG [ PER 3rd,
+				         NUM singular,
+				         COUNT - ],
+		   CAT.HEAD.FORM 3sg ] ].
 
 1sg_nom-noun-lex := nom_pronoun-noun-lex &
-  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM non_3sg,
                    CONT.HOOK.INDEX.PNG [ PER 1st,
                                          NUM singular ] ] ].
 
 3sg_nom-noun-lex := nom_pronoun-noun-lex &
-  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM 3sg,
                    CONT.HOOK.INDEX.PNG [ PER 3rd,
                                          NUM singular ] ] ].
 
 3pl_nom-noun-lex := nom_pronoun-noun-lex &
-  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM non_3sg,
                    CONT.HOOK.INDEX.PNG [ PER 3rd,
 					 NUM plural ] ] ].
 
 1pl_nom-noun-lex := nom_pronoun-noun-lex &
-  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM non_3sg,
                    CONT.HOOK.INDEX.PNG [ NUM plural,
                                          PER 1st ] ] ].
 
@@ -176,25 +178,26 @@ pronoun-noun-lex := noun-lex &
   [ SYNSEM.LOCAL.CAT.HEAD.PRON + ].
 
 it-noun-lex := pronoun-noun-lex & no-spr-noun-lex &
-  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM 3sg,
                    CONT.HOOK.INDEX.PNG [ NUM singular,
                                          PER 3rd ] ] ].
 
 you-noun-lex := pronoun-noun-lex & no-spr-noun-lex &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.PER 2nd ].
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM non_3sg,
+		   CONT.HOOK.INDEX.PNG.PER 2nd ] ].
 
 1sg_acc-noun-lex := acc_pronoun-noun-lex &
-  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM non_3sg,
                    CONT.HOOK.INDEX.PNG [ NUM singular,
                                          PER 1st ] ] ].
 
 1pl_acc-noun-lex := acc_pronoun-noun-lex &
-  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM non_3sg,
                    CONT.HOOK.INDEX.PNG [ NUM plural,
                                          PER 1st ] ] ].
 
 3sg_acc-noun-lex := acc_pronoun-noun-lex &
-  [ SYNSEM.LOCAL [ CAT.HEAD.PRON +,
+  [ SYNSEM.LOCAL [ CAT.HEAD.FORM 3sg,
                    CONT.HOOK.INDEX.PNG [ NUM singular,
                                          PER 3rd ] ] ].
 
@@ -389,16 +392,20 @@ previously, both 'it does sleep' and 'it does sleeping' were parsed
 16/4/2020
 added in the aspect value for the COMPS
 """
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
-		 			     CONT.HOOK.INDEX.E.ASPECT no_aspect ] ].
+  [ SYNSEM.LOCAL.CAT.VAL [ COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
+		 			       CONT.HOOK.INDEX.E.ASPECT no_aspect ] ] ].
 
-can-aux-lex := subj-raise-aux-with-pred &
-"""
-16/4/2020
-added in the aspect such that can will not take a COMPS that has been modified by 'already'
-"""
-  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
-		 			     CONT.HOOK.INDEX.E.ASPECT no_aspect ] ].
+;can-aux-lex := subj-raise-aux-with-pred &
+;"""
+;16/4/2020
+;added in the aspect such that can will not take a COMPS that has been modified by 'already'
+;
+;24/4/2020
+;I think 'there' cannot function as the subject of a 'can' sentence so this type has been made  
+;obsolete for now.
+;"""
+;  [ SYNSEM.LOCAL.CAT.VAL.COMPS.FIRST.LOCAL [ CAT.HEAD.FORM base,
+;		 			     CONT.HOOK.INDEX.E.ASPECT no_aspect ] ].
 
 will-aux-lex := subj-raise-aux-with-pred &
 """
@@ -707,7 +714,8 @@ number-lex-rule-super := add-only-no-ccont-rule &
   [ DTR common_noun-noun-lex ].
 
 plural-lex-rule := infl-lex-rule & number-lex-rule-super &
-  [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.NUM plural ].
+  [ SYNSEM.LOCAL [ CONT.HOOK.INDEX.PNG.NUM plural,
+		   CAT.HEAD.FORM non_3sg ] ].
 
 singular-lex-rule := const-lex-rule & number-lex-rule-super &
   [ SYNSEM.LOCAL.CONT.HOOK.INDEX.PNG.NUM singular ].
@@ -719,16 +727,18 @@ fin-lex-rule-super := add-only-no-ccont-rule & infl-lex-rule &
 3sg-lex-rule := fin-lex-rule-super &
 """ 
 19/3/2020 
-
 added in 'HEAD.FORM finite' to the 3sg-lex-rule so that when it is non finite (eg. with Vaux), the verb will not undergo this rule 
+
+25/4/2020
+changed FORM from finite to 3sg
 """ 
   [ SYNSEM.LOCAL.CAT [HEAD [ NONINFL -,
-			     FORM finite ],
+			     FORM 3sg ],
                       VAL.SUBJ.FIRST.LOCAL.CONT.HOOK.INDEX.PNG [ NUM singular,
                                                                 PER 3rd ] ]].
 
 question-lex-rule := add-only-no-ccont-rule &
-  [ DTR can-aux-lex,
+  [ DTR will-aux-lex,
     SYNSEM.LOCAL.CONT.HOOK.INDEX.SF ques ].
 
 nonfin-lex-rule-super := add-only-no-ccont-rule &
