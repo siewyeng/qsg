@@ -711,18 +711,21 @@ and this grammar will not constraint it
                                                 VAL [ SUBJ cons,
 						      COMPS < > ] ] ] > ] ].
 
-very-adv-lex := basic-scopal-adverb-lex &
-"""
-19/4/2020
-created for new lex item
-"""
-  [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
-                             COMPS < >,
-                             SUBJ < >, 
-			     SPEC < >],
-                       POSTHEAD -,
-                       HEAD.MOD < [ LOCAL.CAT [ HEAD +jr,
-						HEAD.MOD #head ] ] > ] ].
+; MOD.HEAD +vj seems to create ambiguities
+; when 'very very cute' is in a sentence, whether it is very [very cute] or [very very] cute
+;thus 'very' changed to have mod head adj --> changed supertype to notadj_neg-adv-lex
+;very-adv-lex := basic-scopal-adverb-lex &
+;"""
+;19/4/2020
+;created for new lex item
+;"""
+;  [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
+;                             COMPS < >,
+;                             SUBJ < >, 
+;			     SPEC < >],
+;                       POSTHEAD -,
+;                       HEAD.MOD < [ LOCAL.CAT [ HEAD +jr,
+;						HEAD.MOD #head ] ] > ] ].
 
 ;;;;;;;;;;;;;;;;;;;
 ;;; Lexical Rules

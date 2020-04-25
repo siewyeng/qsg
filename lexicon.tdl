@@ -334,7 +334,7 @@ agak := agak-adv-lex &
   [ STEM < "agak" >,
     SYNSEM.LKEYS.KEYREL.PRED "_roughly_a_rel" ].
 
-very := very-adv-lex &
+very := notadj_neg-adv-lex &
   [ STEM < "very" >,
     SYNSEM.LKEYS.KEYREL.PRED "_very_a_rel" ].
 
