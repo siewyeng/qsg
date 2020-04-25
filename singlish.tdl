@@ -628,7 +628,7 @@ this prevents constructions like 'it never cute'
                                                 VAL [ SUBJ cons,
                                                       COMPS null ] ] ] > ] ].
 
-not_neg-adv-lex := basic-scopal-adverb-lex &
+notaux_neg-adv-lex := basic-scopal-adverb-lex &
 """
 7/4/2020
 created this lexical type for 'not'
@@ -654,6 +654,15 @@ added in CAN - to prevent 'it can not hurt me'
 						       CAN - ],
                                                 VAL [ SUBJ cons,
 						      COMPS < #comps > ] ] ] > ] ].
+
+; 25/4/2020 new 'not' type for modifying adjectives
+notadj_neg-adv-lex := basic-scopal-adverb-lex &
+  [ SYNSEM.LOCAL.CAT [ VAL [ SPR < >,
+                             COMPS < >,
+                             SUBJ < >, 
+			     SPEC < >],
+                       POSTHEAD -,
+                       HEAD.MOD < [ LOCAL.CAT.HEAD adj ] > ] ].
 
 ;considering already to be changed from an adverb to get rid of PRED
 aspect-adv-lex := basic-scopal-adverb-lex &

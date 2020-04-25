@@ -318,7 +318,11 @@ never := never_neg-adv-lex &
   [ STEM < "never" >,
     SYNSEM.LKEYS.KEYREL.PRED "neg2_rel" ].
 
-not := not_neg-adv-lex &
+not_modaux := notaux_neg-adv-lex &
+  [ STEM < "not" >,
+    SYNSEM.LKEYS.KEYREL.PRED "neg1_rel" ].
+
+not_modadj := notadj_neg-adv-lex &
   [ STEM < "not" >,
     SYNSEM.LKEYS.KEYREL.PRED "neg1_rel" ].
 
