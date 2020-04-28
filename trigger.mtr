@@ -10,5 +10,10 @@ is+it_gr := generator_rule &
 ;    FLAGS.TRIGGER "is_cop" ].
 
 ;to_gr := generator_rule &
-;  [ CONTEXT.RELS <! [ PRED  ] !>,
-;    FLAGS.TRIGGER "" ].
+;  [ CONTEXT.RELS <! [ PRED "~_v_rel" ] !>,
+;    FLAGS.TRIGGER "to" ].
+;generator rule does not work even though 'to' supposedly
+
+;to_gr := arg0e_gtr &
+;  [ CONTEXT.RELS <! [ ARG0.E event ] !>,
+;    FLAGS.TRIGGER "to" ].

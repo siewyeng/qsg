@@ -438,9 +438,15 @@ want-aux-lex := subj-raise-aux-with-pred &
 
 ;added for constructions like "I want to sleep."
 to-infinitive-lex := trans-first-arg-raising-lex-item-2 & verb-lex &
+"""
+28/4/2020
+empty SPEC added to prevent 'to' from taking itself as SPEC
+stops 'he want to to sleep'
+"""
   [ SYNSEM.LOCAL.CAT [ HEAD.FORM toinf,
-		       VAL.COMPS.FIRST.LOCAL.CAT [ HEAD.FORM base,
-						   VAL.COMPS < > ] ] ].
+		       VAL [ COMPS.FIRST.LOCAL.CAT [ HEAD.FORM base,
+						     VAL.COMPS < > ],
+			     SPEC < > ] ] ].
 ;  [ ARG-ST < [ LOCAL.CONT.HOOK.ICONS-KEY.IARG1 #clause &
 ;					       [ LOCAL.CAT.HEAD.FORM base ]  ],
 ;	     [ LOCAL.CONT.HOOK.CLAUSE-KEY #clause ] > ].
